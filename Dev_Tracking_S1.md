@@ -5,7 +5,7 @@
 | Campo | Valor |
 |---|---|
 | Sprint | S1 |
-| Status | Ativa |
+| Status | Fechada |
 | Início | 2026-04-09T21:35:00-ST |
 | PO | Pendente de validação formal |
 
@@ -79,4 +79,4 @@ Consolidação do ambiente Hermes + Telegram, materialização da documentação
 - [x] Gate de inicialização
 - [x] Planejamento proporcional às mudanças realizadas
 - [x] Proteção de segredos locais
-- [x] Sprint permanece aberta
+- [x] Sprint fechada
