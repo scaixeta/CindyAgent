@@ -1,0 +1,30 @@
+{
+  "sprint": "S5",
+  "source_log": "artifacts/s4-cirrus/2026-04-10/collection_log.txt",
+  "device": "NIMBUS-AERO (Cirrus)",
+  "window": {
+    "start": "17:59:15",
+    "end": "18:57:15",
+    "points": 12
+  },
+  "current": {
+    "temperature_c": 25.0,
+    "humidity_pct": 87.11
+  },
+  "trends": {
+    "temperature": "estável",
+    "humidity": "subida"
+  },
+  "operative_markers": {
+    "temp_interval": "acima do intervalo de referência",
+    "humidity_above_85_count": 10,
+    "humidity_above_85_pct": 83
+  },
+  "summary": {
+    "temperature": "25.0°C (estável)",
+    "humidity": "87.11% (subida)",
+    "proxy_molhamento": "10/12 pontos acima de 85%"
+  },
+  "safe_note": "Métricas são dados de campo. Intervalo 18-24°C é referência operativa, não validação agronómica.",
+  "generated_at": "2026-04-10T22:56:21.305960Z"
+}

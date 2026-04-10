@@ -1,0 +1,36 @@
+# Credenciais e configurações sensíveis
+.scr/
+.env
+.env.local
+*.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Dependencies
+node_modules/
+__pycache__/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# Cindy Infrastructure (versionar)
+!.agent/
+!.agents/
+!.brand/
+!.cline/
+!.clinerules/
+!.codex/

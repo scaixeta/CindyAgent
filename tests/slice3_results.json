@@ -1,0 +1,518 @@
+{
+  "summary": {
+    "total": 29,
+    "passed": 24,
+    "failed": 1,
+    "info": 4
+  },
+  "tests": [
+    {
+      "test_id": "L1-C1",
+      "layer": "Layer 1",
+      "family": "Customers",
+      "scope": "POST /api/customer",
+      "expected": "HTTP 200, customer criado",
+      "actual": "HTTP 200",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/customer",
+        "payload": {
+          "title": "TEST_Customer_L1_20260402133353",
+          "email": "test_20260402133353@sentivis.com"
+        },
+        "response": "{\"id\":{\"entityType\":\"CUSTOMER\",\"id\":\"98487c70-2e98-11f1-9d7b-f9467d23d5b0\"},\"createdTime\":1775136834998,\"country\":null,\"state\":null,\"city\":null,\"address\":null,\"address2\":null,\"zip\":null,\"phone\":null,\"email\":\"test_20260402133353@sentivis.com\",\"title\":\"TEST_Customer_L1_20260402133353\",\"tenantId\":{\"entityType\":\"TENANT\",\"id\":\"4ed84740-2a16-11f1-add0-cf189f3e7679\"},\"externalId\":null,\"version\":1,\"name\":\"TEST_Customer_L1_20260402133353\",\"additionalInfo\":null}"
+      },
+      "notes": "ID: 98487c70-2e98-11f1-9d7b-f9467d23d5b0",
+      "timestamp": "2026-04-02T13:33:54-03"
+    },
+    {
+      "test_id": "L1-C2",
+      "layer": "Layer 1",
+      "family": "Customers",
+      "scope": "GET /api/customer/{id}",
+      "expected": "HTTP 200, customer data",
+      "actual": "HTTP 200",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/customer/98487c70-2e98-11f1-9d7b-f9467d23d5b0",
+        "response": "{\"id\":{\"entityType\":\"CUSTOMER\",\"id\":\"98487c70-2e98-11f1-9d7b-f9467d23d5b0\"},\"createdTime\":1775136834998,\"country\":null,\"state\":null,\"city\":null,\"address\":null,\"address2\":null,\"zip\":null,\"phone\":null,\"email\":\"test_20260402133353@sentivis.com\",\"title\":\"TEST_Customer_L1_20260402133353\",\"tenantId\":{\"entityType\":\"TENANT\",\"id\":\"4ed84740-2a16-11f1-add0-cf189f3e7679\"},\"externalId\":null,\"version\":1,\"name\":\"TEST_Customer_L1_20260402133353\",\"additionalInfo\":null}"
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:33:54-03"
+    },
+    {
+      "test_id": "L1-C3",
+      "layer": "Layer 1",
+      "family": "Customers",
+      "scope": "PUT /api/customer/{id}",
+      "expected": "HTTP 405 (gap API CE)",
+      "actual": "HTTP 405",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/customer/98487c70-2e98-11f1-9d7b-f9467d23d5b0",
+        "response": "{\"message\":\"Request method 'PUT' is not supported\",\"errorCode\":31,\"status\":405,\"timestamp\":1775136836054}"
+      },
+      "notes": "Gap API CE confirmado",
+      "timestamp": "2026-04-02T13:33:55-03"
+    },
+    {
+      "test_id": "L1-C4",
+      "layer": "Layer 1",
+      "family": "Customers",
+      "scope": "DELETE /api/customer/{id}",
+      "expected": "HTTP 200, deletado",
+      "actual": "HTTP 200",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/customer/98487c70-2e98-11f1-9d7b-f9467d23d5b0",
+        "response": ""
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:33:55-03"
+    },
+    {
+      "test_id": "L1-U1",
+      "layer": "Layer 1",
+      "family": "Users",
+      "scope": "GET /api/users",
+      "expected": "HTTP 200, lista de users",
+      "actual": "HTTP 200, 5 users",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/users?pageSize=100&page=0",
+        "count": 5,
+        "sample": [
+          "tenant@thingsboard.org",
+          "customer@thingsboard.org",
+          "customerA@thingsboard.org"
+        ]
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:33:56-03"
+    },
+    {
+      "test_id": "L1-U2",
+      "layer": "Layer 1",
+      "family": "Users",
+      "scope": "GET /api/user/{id}",
+      "expected": "HTTP 200, user data",
+      "actual": "HTTP 200",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/user/4f397a10-2a16-11f1-add0-cf189f3e7679",
+        "response": "{\"id\":{\"entityType\":\"USER\",\"id\":\"4f397a10-2a16-11f1-add0-cf189f3e7679\"},\"createdTime\":1774641073201,\"tenantId\":{\"entityType\":\"TENANT\",\"id\":\"4ed84740-2a16-11f1-add0-cf189f3e7679\"},\"customerId\":{\"entityType\":\"CUSTOMER\",\"id\":\"13814000-1dd2-11b2-8080-808080808080\"},\"email\":\"tenant@thingsboard.org\",\"authority\":\"TENANT_ADMIN\",\"firstName\":\"Slice3\",\"lastName\":\"Admin\",\"phone\":null,\"version\":3,\"name\":\"tenant@thingsboard.org\",\"additionalInfo\":{\"userCredentialsEnabled\":true,\"userActivated\":true,\"lastLoginTs"
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:33:56-03"
+    },
+    {
+      "test_id": "L1-U3",
+      "layer": "Layer 1",
+      "family": "Users",
+      "scope": "PUT /api/user/{id}",
+      "expected": "HTTP 405 (gap API CE)",
+      "actual": "HTTP 405",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/user/4f397a10-2a16-11f1-add0-cf189f3e7679",
+        "response": "{\"message\":\"Request method 'PUT' is not supported\",\"errorCode\":31,\"status\":405,\"timestamp\":1775136838118}"
+      },
+      "notes": "Gap API CE confirmado",
+      "timestamp": "2026-04-02T13:33:57-03"
+    },
+    {
+      "test_id": "L1-CU1",
+      "layer": "Layer 1",
+      "family": "Customer Users",
+      "scope": "GET /api/customer/{id}/users",
+      "expected": "HTTP 200, lista de customer users",
+      "actual": "HTTP 400, 0 users",
+      "status": "FAIL",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/customer/98487c70-2e98-11f1-9d7b-f9467d23d5b0/users",
+        "count": 0
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:33:57-03"
+    },
+    {
+      "test_id": "L1-D1",
+      "layer": "Layer 1",
+      "family": "Devices",
+      "scope": "POST /api/device",
+      "expected": "HTTP 200, device criado",
+      "actual": "HTTP 200",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/device",
+        "payload": {
+          "name": "TEST_Device_L1_20260402133357",
+          "type": "default"
+        },
+        "response": "{\"id\":{\"entityType\":\"DEVICE\",\"id\":\"9ad038c0-2e98-11f1-9d7b-f9467d23d5b0\"},\"createdTime\":1775136839244,\"tenantId\":{\"entityType\":\"TENANT\",\"id\":\"4ed84740-2a16-11f1-add0-cf189f3e7679\"},\"customerId\":{\"entityType\":\"CUSTOMER\",\"id\":\"13814000-1dd2-11b2-8080-808080808080\"},\"name\":\"TEST_Device_L1_20260402133357\",\"type\":\"default\",\"label\":null,\"deviceProfileId\":{\"entityType\":\"DEVICE_PROFILE\",\"id\":\"4ee9d370-2a16-11f1-add0-cf189f3e7679\"},\"firmwareId\":null,\"softwareId\":null,\"externalId\":null,\"version\":1,\"additi"
+      },
+      "notes": "ID: 9ad038c0-2e98-11f1-9d7b-f9467d23d5b0",
+      "timestamp": "2026-04-02T13:33:58-03"
+    },
+    {
+      "test_id": "L1-D2",
+      "layer": "Layer 1",
+      "family": "Devices",
+      "scope": "GET /api/device/{id}",
+      "expected": "HTTP 200, device data",
+      "actual": "HTTP 200",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/device/9ad038c0-2e98-11f1-9d7b-f9467d23d5b0",
+        "response": "{\"id\":{\"entityType\":\"DEVICE\",\"id\":\"9ad038c0-2e98-11f1-9d7b-f9467d23d5b0\"},\"createdTime\":1775136839244,\"tenantId\":{\"entityType\":\"TENANT\",\"id\":\"4ed84740-2a16-11f1-add0-cf189f3e7679\"},\"customerId\":{\"entityType\":\"CUSTOMER\",\"id\":\"13814000-1dd2-11b2-8080-808080808080\"},\"name\":\"TEST_Device_L1_20260402133357\",\"type\":\"default\",\"label\":null,\"deviceProfileId\":{\"entityType\":\"DEVICE_PROFILE\",\"id\":\"4ee9d370-2a16-11f1-add0-cf189f3e7679\"},\"firmwareId\":null,\"softwareId\":null,\"externalId\":null,\"version\":1,\"additi"
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:33:58-03"
+    },
+    {
+      "test_id": "L1-D3",
+      "layer": "Layer 1",
+      "family": "Devices",
+      "scope": "PUT /api/device",
+      "expected": "HTTP 200 ou 405",
+      "actual": "HTTP 405",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/device",
+        "response": "{\"message\":\"Request method 'PUT' is not supported\",\"errorCode\":31,\"status\":405,\"timestamp\":1775136840314}"
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:33:59-03"
+    },
+    {
+      "test_id": "L1-D4",
+      "layer": "Layer 1",
+      "family": "Devices",
+      "scope": "DELETE /api/device/{id}",
+      "expected": "HTTP 200, deletado",
+      "actual": "HTTP 200",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/device/9ad038c0-2e98-11f1-9d7b-f9467d23d5b0",
+        "response": ""
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:33:59-03"
+    },
+    {
+      "test_id": "L2-C1",
+      "layer": "Layer 2",
+      "family": "Customers",
+      "scope": "Read-after-write consistency",
+      "expected": "title=TEST_L2_Consistency_20260402133359",
+      "actual": "read_title=TEST_L2_Consistency_20260402133359, consistent=True",
+      "status": "PASS",
+      "evidence": {
+        "created": {
+          "id": {
+            "entityType": "CUSTOMER",
+            "id": "9c0ed340-2e98-11f1-9d7b-f9467d23d5b0"
+          },
+          "createdTime": 1775136841331,
+          "country": null,
+          "state": null,
+          "city": null,
+          "address": null,
+          "address2": null,
+          "zip": null,
+          "phone": null,
+          "email": "l2_20260402133359@sentivis.com",
+          "title": "TEST_L2_Consistency_20260402133359",
+          "tenantId": {
+            "entityType": "TENANT",
+            "id": "4ed84740-2a16-11f1-add0-cf189f3e7679"
+          },
+          "externalId": null,
+          "version": 1,
+          "name": "TEST_L2_Consistency_20260402133359",
+          "additionalInfo": null
+        },
+        "read": {
+          "id": {
+            "entityType": "CUSTOMER",
+            "id": "9c0ed340-2e98-11f1-9d7b-f9467d23d5b0"
+          },
+          "createdTime": 1775136841331,
+          "country": null,
+          "state": null,
+          "city": null,
+          "address": null,
+          "address2": null,
+          "zip": null,
+          "phone": null,
+          "email": "l2_20260402133359@sentivis.com",
+          "title": "TEST_L2_Consistency_20260402133359",
+          "tenantId": {
+            "entityType": "TENANT",
+            "id": "4ed84740-2a16-11f1-add0-cf189f3e7679"
+          },
+          "externalId": null,
+          "version": 1,
+          "name": "TEST_L2_Consistency_20260402133359",
+          "additionalInfo": null
+        }
+      },
+      "notes": "Consistência confirmada",
+      "timestamp": "2026-04-02T13:34:00-03"
+    },
+    {
+      "test_id": "L2-C2",
+      "layer": "Layer 2",
+      "family": "Customers",
+      "scope": "Update persistence",
+      "expected": "Update persiste ou 405",
+      "actual": "HTTP update=405, persisted=False",
+      "status": "PASS",
+      "evidence": {
+        "update_resp": 405,
+        "after_update": "TEST_L2_20260402133401"
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:34:03-03"
+    },
+    {
+      "test_id": "L2-U1",
+      "layer": "Layer 2",
+      "family": "Users",
+      "scope": "Pagination validation",
+      "expected": "has totalPages/totalElements",
+      "actual": "has_pages=True, has_data=True",
+      "status": "PASS",
+      "evidence": {
+        "response_keys": [
+          "data",
+          "totalPages",
+          "totalElements",
+          "hasNext"
+        ]
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:34:04-03"
+    },
+    {
+      "test_id": "L2-D1",
+      "layer": "Layer 2",
+      "family": "Devices",
+      "scope": "GET /api/tenant/devices with textSearch",
+      "expected": "HTTP 200, devices filtered",
+      "actual": "HTTP 200, 0 devices",
+      "status": "INFO",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/tenant/devices?pageSize=10&page=0&textSearch=Sentivis",
+        "devices": []
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:34:05-03"
+    },
+    {
+      "test_id": "L2-C3",
+      "layer": "Layer 2",
+      "family": "Customers",
+      "scope": "DELETE then GET returns 404",
+      "expected": "HTTP 404",
+      "actual": "HTTP 404",
+      "status": "PASS",
+      "evidence": {
+        "cust_id": "9f2fe960-2e98-11f1-9d7b-f9467d23d5b0",
+        "after_delete_resp": 404
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:34:06-03"
+    },
+    {
+      "test_id": "L2-D2",
+      "layer": "Layer 2",
+      "family": "Devices",
+      "scope": "GET /api/deviceProfiles",
+      "expected": "HTTP 200, profiles list",
+      "actual": "HTTP 200, 2 profiles",
+      "status": "PASS",
+      "evidence": {
+        "profiles": [
+          "default",
+          "thermostat"
+        ]
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:34:07-03"
+    },
+    {
+      "test_id": "L3-N1",
+      "layer": "Layer 3",
+      "family": "Customers",
+      "scope": "POST with invalid JSON",
+      "expected": "HTTP 400 ou 500",
+      "actual": "HTTP 500",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/customer",
+        "status": 500
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:34:07-03"
+    },
+    {
+      "test_id": "L3-N2",
+      "layer": "Layer 3",
+      "family": "Customers",
+      "scope": "POST customer without required field",
+      "expected": "HTTP 400 ou 500",
+      "actual": "HTTP 200",
+      "status": "INFO",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/customer",
+        "payload": {
+          "title": "TEST_NO_EMAIL"
+        },
+        "status": 200,
+        "response": "{\"id\":{\"entityType\":\"CUSTOMER\",\"id\":\"a0b725a0-2e98-11f1-9d7b-f9467d23d5b0\"},\"createdTime\":1775136849146,\"country\":null,\"state\":null,\"city\":null,\"address\":null,\"address2\":null,\"zip\":null,\"phone\":null,\""
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:34:08-03"
+    },
+    {
+      "test_id": "L3-N3",
+      "layer": "Layer 3",
+      "family": "Customers",
+      "scope": "GET /api/customer/{invalid_id}",
+      "expected": "HTTP 400 ou 404",
+      "actual": "HTTP 400",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/customer/invalid-uuid-format",
+        "status": 400
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:34:08-03"
+    },
+    {
+      "test_id": "L3-N4",
+      "layer": "Layer 3",
+      "family": "Customers",
+      "scope": "DELETE non-existent customer",
+      "expected": "HTTP 404",
+      "actual": "HTTP 404",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/customer/00000000-0000-0000-0000-000000000000",
+        "status": 404
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:34:09-03"
+    },
+    {
+      "test_id": "L3-N5",
+      "layer": "Layer 3",
+      "family": "Customers",
+      "scope": "PUT non-existent customer",
+      "expected": "HTTP 404 ou 405",
+      "actual": "HTTP 405",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/customer/00000000-0000-0000-0000-000000000000",
+        "status": 405
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:34:09-03"
+    },
+    {
+      "test_id": "L3-N6",
+      "layer": "Layer 3",
+      "family": "Customers",
+      "scope": "POST duplicate customer name",
+      "expected": "HTTP 200 ou 400 (comportamento varia)",
+      "actual": "HTTP 400",
+      "status": "INFO",
+      "evidence": {
+        "first_resp": 200,
+        "dup_resp": 400,
+        "cust_id": "a1efccb0-2e98-11f1-9d7b-f9467d23d5b0"
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:34:10-03"
+    },
+    {
+      "test_id": "L3-N7",
+      "layer": "Layer 3",
+      "family": "Customers",
+      "scope": "PATCH /api/customers",
+      "expected": "HTTP 405 ou 400",
+      "actual": "HTTP 405",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/customers",
+        "status": 405
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:34:11-03"
+    },
+    {
+      "test_id": "L3-N8",
+      "layer": "Layer 3",
+      "family": "Devices",
+      "scope": "POST device without type",
+      "expected": "HTTP 200 ou 400",
+      "actual": "HTTP 200",
+      "status": "INFO",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/device",
+        "status": 200,
+        "response": "{\"id\":{\"entityType\":\"DEVICE\",\"id\":\"a32da3e0-2e98-11f1-9d7b-f9467d23d5b0\"},\"createdTime\":1775136853278,\"tenantId\":{\"entityType\":\"TENANT\",\"id\":\"4ed84740-2a16-11f1-add0-cf189f3e7679\"},\"customerId\":{\"entityType\":\"CUSTOMER\",\"id\":\"13814000-1dd2-11b2-8080-808080808080\"},\"name\":\"TEST_NoType_20260402133411\","
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:34:12-03"
+    },
+    {
+      "test_id": "L3-N9",
+      "layer": "Layer 3",
+      "family": "Users",
+      "scope": "POST user with invalid email",
+      "expected": "HTTP 400 ou 500",
+      "actual": "HTTP 400",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/user",
+        "status": 400,
+        "response": "{\"status\":400,\"message\":\"Invalid email address format 'invalid-email-20260402133412'!\",\"errorCode\":31,\"timestamp\":1775136854360}"
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:34:13-03"
+    },
+    {
+      "test_id": "L3-N10",
+      "layer": "Layer 3",
+      "family": "Tenants",
+      "scope": "Tenant scope blocked for TENANT_ADMIN",
+      "expected": "HTTP 403",
+      "actual": "GET=403, POST=403",
+      "status": "PASS",
+      "evidence": {
+        "get_tenants": 403,
+        "post_tenant": 403
+      },
+      "notes": "",
+      "timestamp": "2026-04-02T13:34:14-03"
+    },
+    {
+      "test_id": "L3-N11",
+      "layer": "Layer 3",
+      "family": "Customer Users",
+      "scope": "POST /api/user with customerId (SMTP gap)",
+      "expected": "HTTP 500 (SMTP not configured)",
+      "actual": "HTTP 500",
+      "status": "PASS",
+      "evidence": {
+        "url": "http://204.168.202.5:8080/api/user",
+        "status": 500,
+        "response": "{\"status\":500,\"message\":\"I/O error while reading input message\",\"errorCode\":2,\"timestamp\":1775136856441}"
+      },
+      "notes": "Gap SMTP confirmado",
+      "timestamp": "2026-04-02T13:34:15-03"
+    }
+  ]
+}

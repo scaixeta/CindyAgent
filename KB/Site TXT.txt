@@ -1,0 +1,3770 @@
+https://www.portal.agroapi.cnptia.embrapa.br/api-docs/agrofit/v1#tag/Titular-de-Registro/operation/find_8
+
+
+AGROFIT (v1)
+A API AGROFIT é composta por um banco de dados de todos os produtos: defensivos agrícolas, agrotóxicos, produtos fitossanitários e afins registrados no Ministério da Agricultura e Pecuária, com informações do Ministério da Saúde (ANVISA) e do Ministério do Meio Ambiente e Mudança do Clima (IBAMA). A API permite obter informações sobre produtos registrados para o controle de pragas (insetos e doenças) e plantas invasoras na agricultura brasileira, a partir de consultas por: praga, cultura, marca comercial, titular do registro, ingrediente ativo,classificação toxicológica e classificação ambiental, entre outros. A utilização da API AGROFIT permite à obtenção de dados corretos e seguros dos produtos registrados no Ministério da Agricultura e Pecuária oferecendo alternativas eficazes na solução de problemas fitossanitários, e ao mesmo tempo, contribuindo para evitar o uso inadequado de agrotóxicos e afins, que poderia acarretar no desenvolvimento de resistência de pragas nas lavouras e resíduos de agrotóxicos em produtos vegetais acima dos Limites Máximos de Resíduos (LMR) estabelecidos, por exemplo.
+
+Classe e Categoria Agronômica
+Recursos da API envolvendo informações de classes e categorias agronômicas.
+
+Retorna a lista de classes e categorias agronômicas.
+Retorna a lista de classes e categorias agronômicas.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de classes e categorias agronômicas
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/classes-categorias-agronomicas
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Acaricida"
+},
+{
+"nome": "Acaricida Microbiológico"
+},
+{
+"nome": "Agente Biológico de Controle"
+},
+{
+"nome": "Ativador de planta"
+},
+{
+"nome": "Bactericida"
+},
+{
+"nome": "Bactericida Microbiológico"
+},
+{
+"nome": "Cupinicida"
+},
+{
+"nome": "Feromônio"
+},
+{
+"nome": "Formicida"
+},
+{
+"nome": "Fungicida"
+},
+{
+"nome": "Fungicida microbiológico"
+},
+{
+"nome": "Herbicida"
+},
+{
+"nome": "Inseticida"
+},
+{
+"nome": "Inseticida fumigante"
+},
+{
+"nome": "Inseticida Microbiológico"
+},
+{
+"nome": "Moluscicida"
+},
+{
+"nome": "Nematicida"
+},
+{
+"nome": "Nematicida Microbiológico"
+},
+{
+"nome": "Protetor de sementes"
+},
+{
+"nome": "Regulador de Crescimento"
+}
+]
+Classificação Ambiental
+Recursos da API envolvendo informações de classificações ambientais.
+
+Retorna a lista de classificações ambientais.
+Retorna a lista de classificações ambientais.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de classificações ambientais
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/classificacoes-ambientais
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "I - Produto Altamente Perigoso ao Meio Ambiente"
+},
+{
+"nome": "II - Produto Muito Perigoso ao Meio Ambiente"
+},
+{
+"nome": "III - Produto Perigoso ao Meio Ambiente"
+},
+{
+"nome": "IV - Produto Pouco Perigoso ao Meio Ambiente"
+},
+{
+"nome": "Produto de Baixo Risco ao Meio Ambiente"
+}
+]
+Classificação Toxicológica
+Recursos da API envolvendo informações de classificações toxicológicas.
+
+Retorna a lista de classificações toxicológicas.
+Retorna a lista de classificações toxicológicas.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de classificações toxicológicas
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/classificacoes-toxicologicas
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Altamente Tóxico"
+},
+{
+"nome": "BAIXA EXPOSIÇÃO PARA USO RESTRITO EM ARMADILHAS"
+},
+{
+"nome": "Categoria 1 - Produto Extremamente Tóxico"
+},
+{
+"nome": "Categoria 2 - Produto Altamente Tóxico"
+},
+{
+"nome": "Categoria 3 - Produto Moderadamente Tóxico"
+},
+{
+"nome": "Categoria 4 - Produto Pouco Tóxico"
+},
+{
+"nome": "Categoria 5 - Produto Improvável de Causar Dano Agudo"
+},
+{
+"nome": "Extremamente Tóxico"
+},
+{
+"nome": "Medianamente Tóxico"
+},
+{
+"nome": "Não Classificado - Produto Não Classificado"
+},
+{
+"nome": "NÃO DETERMINADO DEVIDO À NATUREZA DO PRODUTO"
+},
+{
+"nome": "Pouco Tóxico"
+}
+]
+Cultura
+Recursos da API envolvendo informações de culturas.
+
+Retorna a lista de culturas.
+Retorna a lista de culturas.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de culturas
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/culturas
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Abacate"
+},
+{
+"nome": "Abacaxi"
+},
+{
+"nome": "Abóbora"
+},
+{
+"nome": "Abobrinha"
+},
+{
+"nome": "Acácia"
+},
+{
+"nome": "Acácia negra"
+},
+{
+"nome": "Açaí"
+},
+{
+"nome": "Acelga"
+},
+{
+"nome": "Acerola"
+},
+{
+"nome": "Agrião"
+},
+{
+"nome": "Aipo"
+},
+{
+"nome": "Álamo"
+},
+{
+"nome": "Alcachofra"
+},
+{
+"nome": "Alecrim"
+},
+{
+"nome": "Alface"
+},
+{
+"nome": "Alfafa"
+},
+{
+"nome": "Algodão"
+},
+{
+"nome": "Alho"
+},
+{
+"nome": "Alho porró"
+},
+{
+"nome": "Almeirão"
+},
+{
+"nome": "Alstroeméria"
+},
+{
+"nome": "Alyssum"
+},
+{
+"nome": "Amaryllis"
+},
+{
+"nome": "Ameixa"
+},
+{
+"nome": "Amêndoa"
+},
+{
+"nome": "Amendoim"
+},
+{
+"nome": "Amora"
+},
+{
+"nome": "Anonáceas"
+},
+{
+"nome": "Antúrio"
+},
+{
+"nome": "Aralia elegante"
+},
+{
+"nome": "Aralia japonesa"
+},
+{
+"nome": "Araticum"
+},
+{
+"nome": "Araucária"
+},
+{
+"nome": "Ardísia"
+},
+{
+"nome": "Arroz"
+},
+{
+"nome": "Arroz - Armazenado"
+},
+{
+"nome": "Arroz irrigado"
+},
+{
+"nome": "Todas as culturas"
+}
+]
+Formulação
+Recursos da API envolvendo informações de formulações.
+
+Retorna a lista de formulações.
+Retorna a lista de formulações.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de formulações
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/formulacoes
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Ácaros vivos"
+},
+{
+"nome": "AL - Líquido"
+},
+{
+"nome": "CB - Isca Concentrada"
+},
+{
+"nome": "CF - Suspensão Encapsulado p/ Trat. Sementes"
+},
+{
+"nome": "CG - Granulado Encapsulado"
+},
+{
+"nome": "CS - Suspensão de Encapsulado"
+},
+{
+"nome": "DC - Concentrado Dispersível"
+},
+{
+"nome": "DP - Pó Seco"
+},
+{
+"nome": "DS - Pó para Tratamento a Seco de Sementes"
+},
+{
+"nome": "EC - Concentrado Emulsionável"
+},
+{
+"nome": "EG - Grânulos Emulsionáveis"
+},
+{
+"nome": "EO - Emulsão Água em Óleo"
+},
+{
+"nome": "EW - Emulsão Óleo em Água"
+},
+{
+"nome": "FD - Fumigante em Lata"
+},
+{
+"nome": "FF - Fumigante em Pastilhas"
+},
+{
+"nome": "Formulação mista CS e SC"
+},
+{
+"nome": "FS - Suspensão Concentrada p/ Trat. Sementes"
+},
+{
+"nome": "FT - Fumigante em Tablete"
+},
+{
+"nome": "FU - Fumigante"
+},
+{
+"nome": "FW - Fumigante em Grânulos"
+},
+{
+"nome": "GA - Gás"
+},
+{
+"nome": "GB - Isca Granulada"
+},
+{
+"nome": "GE - Gerador de gás"
+},
+{
+"nome": "GL - Gel Emulsionável"
+},
+{
+"nome": "GR - Granulado"
+},
+{
+"nome": "HN - Concentrado Termo Nebulizável"
+},
+{
+"nome": "Insetos Vivos"
+},
+{
+"nome": "LS - Solução para Tratamento de Sementes"
+},
+{
+"nome": "ME - Micro Emulsão"
+},
+{
+"nome": "MG - Micro Granulado"
+},
+{
+"nome": "Nematóides vivos"
+},
+{
+"nome": "OD - Dispersão de óleo ou Suspensão Concentrada em óleo"
+},
+{
+"nome": "PA - Pasta"
+},
+{
+"nome": "RB - Isca"
+},
+{
+"nome": "SB - Isca em Pedaços"
+},
+{
+"nome": "SC - Suspensão Concentrada"
+},
+{
+"nome": "SE - Suspo-Emulsão"
+},
+{
+"nome": "SG - Granulado Solúvel"
+},
+{
+"nome": "SL - Concentrado Solúvel"
+},
+{
+"nome": "SO - Óleo para Pulverização"
+},
+{
+"nome": "SP - Pó Solúvel"
+},
+{
+"nome": "TB - Tabletes"
+},
+{
+"nome": "UL - Ultra Baixo Volume"
+},
+{
+"nome": "VP - Evaporável"
+},
+{
+"nome": "WG - Grânulos Dispersíveis em Água"
+},
+{
+"nome": "WP - Pó Molhável"
+},
+{
+"nome": "WS - Pó para Preparação de Pasta em Água"
+},
+{
+"nome": "XX - Outras"
+}
+]
+Health
+Verifica a disponibilidade do funcionamento da API.
+
+Resposta sem conteúdo.
+Resposta sem conteúdo, apenas para verificar o funcionamento da API.
+
+Responses
+204 Resposta sem conteúdo, apenas para verificar o funcionamento da API.
+500 Erro interno inesperado no sistema.
+
+get
+/health
+
+Response samples
+500
+Content type
+application/json
+
+Copy
+{
+"http status code": 500,
+"http status description": "Internal Server Error",
+"message": "Ocorreu um erro interno inesperado no sistema. Tente novamente e se o problema persistir, entre em contato com o administrador do sistema.",
+"exception": "Unavailable Server",
+"exception message": "Ocorreu um erro interno inesperado no sistema. Tente novamente e se o problema persistir, entre em contato com o administrador do sistema."
+}
+Ingrediente Ativo
+Recursos da API envolvendo informações de ingredientes ativos.
+
+Retorna a lista de ingredientes ativos.
+Retorna a lista de ingredientes ativos.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de ingredientes ativos
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/ingredientes-ativos
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome_comum": "(E)-8-dodecenol",
+"grupo_quimico": "álcool insaturado",
+"classe": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_ing_ativo_detalhe_cons?p_id_ingrediente_ativo=330"
+},
+{
+"nome_comum": "(E,Z)-dodeca-7,9-dienyl acetate",
+"grupo_quimico": "feromônio",
+"classe": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_ing_ativo_detalhe_cons?p_id_ingrediente_ativo=685"
+},
+{
+"nome_comum": "(Z)- 11- Hexadecenal",
+"grupo_quimico": "aldeído",
+"classe": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_ing_ativo_detalhe_cons?p_id_ingrediente_ativo=368"
+},
+{
+"nome_comum": "(Z)-7-Hexadecenal",
+"grupo_quimico": "aldeído",
+"classe": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_ing_ativo_detalhe_cons?p_id_ingrediente_ativo=744"
+},
+{
+"nome_comum": "(Z)-8-dodecenol",
+"grupo_quimico": "álcool insaturado",
+"classe": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_ing_ativo_detalhe_cons?p_id_ingrediente_ativo=332"
+},
+{
+"nome_comum": "(Z)-9-Hexadecenal",
+"grupo_quimico": "aldeído",
+"classe": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_ing_ativo_detalhe_cons?p_id_ingrediente_ativo=369"
+},
+{
+"nome_comum": "(Z,Z,Z)-3,6,9-tricosatrieno",
+"grupo_quimico": "hidrocarboneto insaturado",
+"classe": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_ing_ativo_detalhe_cons?p_id_ingrediente_ativo=328"
+},
+{
+"nome_comum": "1,4 Dimetilnaftaleno",
+"grupo_quimico": "hidrocarbonetos aromáticos",
+"classe": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_ing_ativo_detalhe_cons?p_id_ingrediente_ativo=810"
+},
+{
+"nome_comum": "1-Aminocyclopropane-1-carboxylic acid",
+"grupo_quimico": "Precursor de etileno",
+"classe": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_ing_ativo_detalhe_cons?p_id_ingrediente_ativo=875"
+},
+{
+"nome_comum": "2,4-D",
+"grupo_quimico": "ácido ariloxialcanóico",
+"classe": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_ing_ativo_detalhe_cons?p_id_ingrediente_ativo=1"
+},
+{
+"nome_comum": "2,4-D amina",
+"grupo_quimico": "ácido ariloxialcanóico",
+"classe": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_ing_ativo_detalhe_cons?p_id_ingrediente_ativo=675"
+},
+{
+"nome_comum": "2,4-D Sal de Colina",
+"grupo_quimico": "ácido ariloxialcanóico",
+"classe": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_ing_ativo_detalhe_cons?p_id_ingrediente_ativo=664"
+},
+{
+"nome_comum": "2,4-D sal sódico",
+"grupo_quimico": "ácido ariloxialcanóico",
+"classe": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_ing_ativo_detalhe_cons?p_id_ingrediente_ativo=697"
+}
+]
+Marca Comercial
+Recursos da API envolvendo informações de marcas comerciais.
+
+Retorna a lista de marcas comerciais.
+Retorna a lista de marcas comerciais.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de marcas comerciais
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/marcas-comerciais
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "1,4 Sight"
+},
+{
+"nome": "2,4-D (240) + Picloram (64) SL"
+},
+{
+"nome": "2,4-D 806 RN"
+},
+{
+"nome": "2,4-D 806 SL Alamos"
+},
+{
+"nome": "2,4-D AGCN"
+},
+{
+"nome": "2,4-D Agritec"
+},
+{
+"nome": "2,4-D Agroimport"
+},
+{
+"nome": "2,4-D Amina CCAB 806 SL"
+},
+{
+"nome": "2,4-D CHD'S"
+},
+{
+"nome": "2,4-D Copalliance"
+},
+{
+"nome": "2,4-D CROP 806 SL"
+},
+{
+"nome": "2,4-D Nortox"
+},
+{
+"nome": "2,4-D Nortox 970 WG"
+},
+{
+"nome": "2,4-D R 806 SL Perterra"
+},
+{
+"nome": "2,4-D Super Amine SG"
+},
+{
+"nome": "2,4-D Tecnomyl"
+},
+{
+"nome": "Aba 400 WG Nortox"
+},
+{
+"nome": "Abacus HC"
+},
+{
+"nome": "Abaday"
+},
+{
+"nome": "Abadin 72 EC"
+},
+{
+"nome": "Abamectin 72 EC Nortox"
+},
+{
+"nome": "Abamectin Nortox"
+},
+{
+"nome": "Abamectin Nortox 400 WG"
+},
+{
+"nome": "Abamectin Prentiss"
+},
+{
+"nome": "Abamex"
+},
+{
+"nome": "Abamex BR 18"
+},
+{
+"nome": "Abamex Maxx"
+},
+{
+"nome": "Able"
+},
+{
+"nome": "Abone"
+}
+]
+Modo de Ação
+Recursos da API envolvendo informações de modos de ações.
+
+Retorna a lista de modos de ações.
+Retorna a lista de modos de ações.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de modos de ações
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/modos-acoes
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Ação protetora"
+},
+{
+"nome": "Ação Sistêmica"
+},
+{
+"nome": "Acaricida"
+},
+{
+"nome": "Acelerador de ecdise"
+},
+{
+"nome": "adjuvante"
+},
+{
+"nome": "Agente biológico de controle"
+},
+{
+"nome": "Agente biológico de controle (inseto estéril)"
+},
+{
+"nome": "Agente microbiológico"
+},
+{
+"nome": "antialimentar e repelente de insetos"
+},
+{
+"nome": "Atração"
+},
+{
+"nome": "atração através do odor"
+},
+{
+"nome": "Atração através do odor e armadilhamento"
+},
+{
+"nome": "Atrativo e Contato"
+},
+{
+"nome": "Atrativo e contato"
+},
+{
+"nome": "Atrativo sexual"
+},
+{
+"nome": "Biológico"
+},
+{
+"nome": "Bloqueador da ação do etileno"
+},
+{
+"nome": "Bloqueador de etileno"
+},
+{
+"nome": "Bloqueador seletivo de alimentação."
+},
+{
+"nome": "Bloqueador Seletivo de Amientação"
+},
+{
+"nome": "Bloqueio da síntese de etileno"
+},
+{
+"nome": "Competição"
+},
+{
+"nome": "Condicional de ação não sistêmica"
+},
+{
+"nome": "Confusão Sexual"
+},
+{
+"nome": "Confusão sexual"
+},
+{
+"nome": "Contado, ingestão"
+},
+{
+"nome": "Contao e Ingestão"
+},
+{
+"nome": "CONTATO"
+},
+{
+"nome": "contato"
+},
+{
+"nome": "Contato"
+},
+{
+"nome": "Contato de ação preventiva"
+},
+{
+"nome": "Contato e fumigação"
+},
+{
+"nome": "CONTATO E INGESTÃO"
+},
+{
+"nome": "Contato e Ingestão"
+},
+{
+"nome": "contato e ingestão"
+},
+{
+"nome": "Contato e ingestão"
+},
+{
+"nome": "contato e ingestão."
+},
+{
+"nome": "Contato e ingestão."
+},
+{
+"nome": "Contato e Ingestão."
+},
+{
+"nome": "Contato e mesosistêmico."
+},
+{
+"nome": "contato e não sistêmico"
+}
+]
+Planta Daninha
+Recursos da API envolvendo informações de plantas daninhas.
+
+Retorna a lista de plantas daninhas.
+Retorna a lista de plantas daninhas.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de plantas daninhas
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/plantas-daninhas
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome_cientifico": "(Paspalum virgatum",
+"nome_comum": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_planta_detalhe_cons?p_id_planta_daninha=2861"
+},
+{
+"nome_cientifico": "Acacia farnesiana",
+"nome_comum": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_planta_detalhe_cons?p_id_planta_daninha=1048"
+},
+{
+"nome_cientifico": "Acacia paniculata",
+"nome_comum": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_planta_detalhe_cons?p_id_planta_daninha=1049"
+},
+{
+"nome_cientifico": "Acacia plumosa",
+"nome_comum": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_planta_detalhe_cons?p_id_planta_daninha=1050"
+},
+{
+"nome_cientifico": "Acanthospermum australe",
+"nome_comum": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_planta_detalhe_cons?p_id_planta_daninha=1051"
+},
+{
+"nome_cientifico": "Acanthospermum hispidum",
+"nome_comum": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_planta_detalhe_cons?p_id_planta_daninha=1052"
+},
+{
+"nome_cientifico": "Achyrocline satureioides",
+"nome_comum": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_planta_detalhe_cons?p_id_planta_daninha=1053"
+},
+{
+"nome_cientifico": "Aeschynomene denticulata",
+"nome_comum": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_planta_detalhe_cons?p_id_planta_daninha=1055"
+},
+{
+"nome_cientifico": "Aeschynomene indica",
+"nome_comum": [ ],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_planta_detalhe_cons?p_id_planta_daninha=2661"
+},
+{
+"nome_cientifico": "Aeschynomene rudis",
+"nome_comum": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_planta_detalhe_cons?p_id_planta_daninha=1056"
+},
+{
+"nome_cientifico": "Aeschynomene selloi",
+"nome_comum": [],
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_planta_detalhe_cons?p_id_planta_daninha=1057"
+}
+]
+Planta Daninha Nome Comum
+Recursos da API envolvendo informações de nomes comuns de plantas daninhas.
+
+Retorna a lista de nomes comuns de plantas daninhas.
+Retorna a lista de nomes comuns de plantas daninhas.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de nomes comuns de plantas daninhas
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/plantas-daninhas-nomes-comuns
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "abrolho"
+},
+{
+"nome": "absinto"
+},
+{
+"nome": "acacia-de-espinho"
+},
+{
+"nome": "acácia-de-flor-vermelha"
+},
+{
+"nome": "acácia-negra"
+},
+{
+"nome": "acariçoba"
+},
+{
+"nome": "acataia"
+},
+{
+"nome": "agrião"
+},
+{
+"nome": "agrião-do-brejo"
+},
+{
+"nome": "agrião-do-pasto"
+},
+{
+"nome": "agriãozinho"
+},
+{
+"nome": "aguapé"
+},
+{
+"nome": "aguapé-de-canudo"
+},
+{
+"nome": "aguapé-de-cordão"
+},
+{
+"nome": "aguapé-de-flexa"
+},
+{
+"nome": "aguapé-mirim"
+},
+{
+"nome": "aipo-bravo"
+},
+{
+"nome": "alecrim"
+},
+{
+"nome": "alecrim-da-praia"
+},
+{
+"nome": "alecrim-de-santa-catarina"
+},
+{
+"nome": "alecrim-de-vassoura"
+},
+{
+"nome": "alecrim-do-campo"
+},
+{
+"nome": "alecrim-falso"
+},
+{
+"nome": "alface"
+}
+]
+Praga
+Recursos da API envolvendo informações de pragas.
+
+Retorna a lista de pragas.
+Retorna a lista de pragas.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de pragas
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/pragas
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"classificacao": "Insetos",
+"nome_cientifico": "Acanthoscelides obtectus",
+"nome_comum": [],
+"cultura": []
+},
+{
+"classificacao": "Insetos",
+"nome_cientifico": "Aceria guerreronis",
+"nome_comum": [],
+"cultura": []
+},
+{
+"classificacao": "Insetos",
+"nome_cientifico": "Aceria litchii",
+"nome_comum": [],
+"cultura": []
+}
+]
+Praga Nome Científico
+Recursos da API envolvendo informações de nomes científicos de pragas.
+
+Retorna a lista de nomes científicos de pragas, a partir da consulta realizada.
+Retorna a lista de nomes científicos de pragas, a partir da consulta realizada.
+
+query Parameters
+q	
+string
+Example: q=Alabama
+Termo de busca para a consulta
+
+nome	
+string
+Example: nome=Alab
+Consulta contendo o nome científico da praga
+
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de nomes científicos de pragas
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/search/pragas-nomes-cientificos
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Acidovorax avenae subsp. avenae"
+},
+{
+"nome": "Alabama argillacea"
+},
+{
+"nome": "Aleurocanthus woglumi"
+},
+{
+"nome": "Alternaria alternata"
+},
+{
+"nome": "Alternaria dauci"
+},
+{
+"nome": "Alternaria porri"
+},
+{
+"nome": "Alternaria solani"
+},
+{
+"nome": "Anastrepha spp."
+},
+{
+"nome": "Anthonomus grandis"
+},
+{
+"nome": "Anticarsia gemmatalis"
+},
+{
+"nome": "Aphis gossypii"
+}
+]
+Retorna a lista de nomes científicos de pragas.
+Retorna a lista de nomes científicos de pragas.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de nomes científicos de pragas
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/pragas-nomes-cientificos
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Acidovorax avenae subsp. avenae"
+},
+{
+"nome": "Alabama argillacea"
+},
+{
+"nome": "Aleurocanthus woglumi"
+},
+{
+"nome": "Alternaria alternata"
+},
+{
+"nome": "Alternaria dauci"
+},
+{
+"nome": "Alternaria porri"
+},
+{
+"nome": "Alternaria solani"
+},
+{
+"nome": "Anastrepha spp."
+},
+{
+"nome": "Anthonomus grandis"
+},
+{
+"nome": "Anticarsia gemmatalis"
+},
+{
+"nome": "Aphis gossypii"
+}
+]
+Praga Nome Comum
+Recursos da API envolvendo informações de nomes comuns de pragas.
+
+Retorna a lista de nomes comuns de pragas, a partir da consulta realizada.
+Retorna a lista de nomes comuns de pragas, a partir da consulta realizada.
+
+query Parameters
+q	
+string
+Example: q=Ácaro
+Termo de busca para a consulta
+
+nome	
+string
+Example: nome=Áca
+Consulta contendo o nome comum da praga
+
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de nomes comuns de pragas
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/search/pragas-nomes-comuns
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Abelha-arapuá"
+},
+{
+"nome": "Ácaro"
+},
+{
+"nome": "Ácaro  branco"
+},
+{
+"nome": "Ácaro branco"
+},
+{
+"nome": "Ácaro da falsa ferrugem"
+},
+{
+"nome": "Acaro da necrose"
+},
+{
+"nome": "Ácaro do bronzeado"
+},
+{
+"nome": "Ácaro do coqueiro"
+},
+{
+"nome": "ácaro plano"
+},
+{
+"nome": "Ácaro rajado"
+},
+{
+"nome": "Ácaro vermelho"
+},
+{
+"nome": "Ácaro vermelho das palmeiras"
+},
+{
+"nome": "Ácaro-alaranjado"
+},
+{
+"nome": "Ácaro-branco"
+},
+{
+"nome": "Ácaro-bronzeado"
+},
+{
+"nome": "Ácaro-bronzeador"
+},
+{
+"nome": "Ácaro-da-erinose-da-videira"
+},
+{
+"nome": "Ácaro-da-falsa-ferrugem"
+},
+{
+"nome": "Ácaro-da-leprose"
+},
+{
+"nome": "acaro-da-lichia"
+},
+{
+"nome": "Ácaro-da-macieira"
+},
+{
+"nome": "Ácaro-da-mal-formação-das-gemas"
+},
+{
+"nome": "Ácaro-da-mulata"
+},
+{
+"nome": "Ácaro-da-necrose-do-coqueiro"
+},
+{
+"nome": "Ácaro-das-flores-do-abacateiro"
+},
+{
+"nome": "Ácaro-das-gemas"
+},
+{
+"nome": "Ácaro-do-bronzeado"
+},
+{
+"nome": "Ácaro-do-bronzeamento"
+},
+{
+"nome": "Ácaro-do-coqueiro"
+},
+{
+"nome": "Ácaro-do-enfezamento"
+},
+{
+"nome": "Ácaro-do-morangueiro"
+},
+{
+"nome": "Ácaro-plano"
+},
+{
+"nome": "ácaro-plano"
+},
+{
+"nome": "Ácaro-plano-da-base-das-folhas"
+},
+{
+"nome": "Ácaro-prateado"
+},
+{
+"nome": "Ácaro-purpúreo"
+},
+{
+"nome": "Acaro-rajado"
+},
+{
+"nome": "ácaro-rajado"
+},
+{
+"nome": "Ácaro-rajado"
+},
+{
+"nome": "Ácaro-rajado."
+},
+{
+"nome": "Ácaro-roxo"
+},
+{
+"nome": "Ácaro-texano"
+},
+{
+"nome": "Ácaro-tropical"
+},
+{
+"nome": "Ácaro-verde"
+},
+{
+"nome": "Ácaro-verde-do-feijoeiro"
+},
+{
+"nome": "Ácaro-vermelho"
+},
+{
+"nome": "Ácaro-vermelho-da-macieira"
+},
+{
+"nome": "Ácaro-vermelho-doamendoim"
+},
+{
+"nome": "Ácaro-vermelho-europeu"
+},
+{
+"nome": "Ácaros vermelhos"
+},
+{
+"nome": "Ácaros-vermelhos"
+},
+{
+"nome": "Afídeo"
+},
+{
+"nome": "Afídio de feijão preto"
+},
+{
+"nome": "alternaria"
+},
+{
+"nome": "Alternaria"
+},
+{
+"nome": "Alternaria púrpura"
+},
+{
+"nome": "Alternariose"
+},
+{
+"nome": "Amarelão"
+},
+{
+"nome": "Amarelecimento-de-Fusarium"
+},
+{
+"nome": "Amarelinho"
+},
+{
+"nome": "Amarelo-letal-do-mamoeiro"
+},
+{
+"nome": "Ampola"
+},
+{
+"nome": "Ampola-da-erva-mate"
+},
+{
+"nome": "Anel-vermelho"
+},
+{
+"nome": "antracnose"
+},
+{
+"nome": "Antracnose"
+},
+{
+"nome": "Antracnose da framboesa"
+},
+{
+"nome": "Antracnose do abacateiro"
+},
+{
+"nome": "Antracnose foliar"
+},
+{
+"nome": "Antracnose-da-cebola-branca"
+},
+{
+"nome": "Antracnose-da-lentilha"
+},
+{
+"nome": "Antracnose-do-colmo"
+},
+{
+"nome": "Antracnose-do-guaraná"
+},
+{
+"nome": "Antracnose-do-rizoma"
+},
+{
+"nome": "Antracnose-dos-frutos"
+}
+]
+Retorna a lista de nomes comuns de pragas.
+Retorna a lista de nomes comuns de pragas.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de nomes comuns de pragas
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/pragas-nomes-comuns
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Abelha-arapuá"
+},
+{
+"nome": "Ácaro"
+},
+{
+"nome": "Ácaro  branco"
+},
+{
+"nome": "Ácaro branco"
+},
+{
+"nome": "Ácaro da falsa ferrugem"
+},
+{
+"nome": "Acaro da necrose"
+},
+{
+"nome": "Ácaro do bronzeado"
+},
+{
+"nome": "Ácaro do coqueiro"
+},
+{
+"nome": "ácaro plano"
+},
+{
+"nome": "Ácaro rajado"
+},
+{
+"nome": "Ácaro vermelho"
+},
+{
+"nome": "Ácaro vermelho das palmeiras"
+},
+{
+"nome": "Ácaro-alaranjado"
+},
+{
+"nome": "Ácaro-branco"
+},
+{
+"nome": "Ácaro-bronzeado"
+},
+{
+"nome": "Ácaro-bronzeador"
+},
+{
+"nome": "Ácaro-da-erinose-da-videira"
+},
+{
+"nome": "Ácaro-da-falsa-ferrugem"
+},
+{
+"nome": "Ácaro-da-leprose"
+},
+{
+"nome": "acaro-da-lichia"
+},
+{
+"nome": "Ácaro-da-macieira"
+},
+{
+"nome": "Ácaro-da-mal-formação-das-gemas"
+},
+{
+"nome": "Ácaro-da-mulata"
+},
+{
+"nome": "Ácaro-da-necrose-do-coqueiro"
+},
+{
+"nome": "Ácaro-das-flores-do-abacateiro"
+},
+{
+"nome": "Ácaro-das-gemas"
+},
+{
+"nome": "Ácaro-do-bronzeado"
+},
+{
+"nome": "Ácaro-do-bronzeamento"
+},
+{
+"nome": "Ácaro-do-coqueiro"
+},
+{
+"nome": "Ácaro-do-enfezamento"
+},
+{
+"nome": "Ácaro-do-morangueiro"
+},
+{
+"nome": "Ácaro-plano"
+},
+{
+"nome": "ácaro-plano"
+},
+{
+"nome": "Ácaro-plano-da-base-das-folhas"
+},
+{
+"nome": "Ácaro-prateado"
+},
+{
+"nome": "Ácaro-purpúreo"
+},
+{
+"nome": "Acaro-rajado"
+},
+{
+"nome": "ácaro-rajado"
+},
+{
+"nome": "Ácaro-rajado"
+},
+{
+"nome": "Ácaro-rajado."
+},
+{
+"nome": "Ácaro-roxo"
+},
+{
+"nome": "Ácaro-texano"
+},
+{
+"nome": "Ácaro-tropical"
+},
+{
+"nome": "Ácaro-verde"
+},
+{
+"nome": "Ácaro-verde-do-feijoeiro"
+},
+{
+"nome": "Ácaro-vermelho"
+},
+{
+"nome": "Ácaro-vermelho-da-macieira"
+},
+{
+"nome": "Ácaro-vermelho-doamendoim"
+},
+{
+"nome": "Ácaro-vermelho-europeu"
+},
+{
+"nome": "Ácaros vermelhos"
+},
+{
+"nome": "Ácaros-vermelhos"
+},
+{
+"nome": "Afídeo"
+},
+{
+"nome": "Afídio de feijão preto"
+},
+{
+"nome": "alternaria"
+},
+{
+"nome": "Alternaria"
+},
+{
+"nome": "Alternaria púrpura"
+},
+{
+"nome": "Alternariose"
+},
+{
+"nome": "Amarelão"
+},
+{
+"nome": "Amarelecimento-de-Fusarium"
+},
+{
+"nome": "Amarelinho"
+},
+{
+"nome": "Amarelo-letal-do-mamoeiro"
+},
+{
+"nome": "Ampola"
+},
+{
+"nome": "Ampola-da-erva-mate"
+},
+{
+"nome": "Anel-vermelho"
+},
+{
+"nome": "antracnose"
+},
+{
+"nome": "Antracnose"
+},
+{
+"nome": "Antracnose da framboesa"
+},
+{
+"nome": "Antracnose do abacateiro"
+},
+{
+"nome": "Antracnose foliar"
+},
+{
+"nome": "Antracnose-da-cebola-branca"
+},
+{
+"nome": "Antracnose-da-lentilha"
+},
+{
+"nome": "Antracnose-do-colmo"
+},
+{
+"nome": "Antracnose-do-guaraná"
+},
+{
+"nome": "Antracnose-do-rizoma"
+},
+{
+"nome": "Antracnose-dos-frutos"
+}
+]
+Produto Formulado
+Recursos da API envolvendo informações de produtos formulados.
+
+Retorna a lista de produtos formulados, a partir da consulta realizada.
+Retorna a lista de produtos formulados, a partir da consulta realizada.
+
+query Parameters
+q	
+string
+Example: q=mosca branca
+Termo de busca para a consulta
+
+praga_nome_cientifico	
+string
+Example: praga_nome_cientifico=Bemisia tabaci raça B
+Consulta contendo o nome científico da praga
+
+praga_nome_comum	
+string
+Example: praga_nome_comum=Mosca branca
+Consulta contendo o nome comum da praga
+
+numero_registro	
+string
+Example: numero_registro=5810
+Consulta exata a partir do número de registro do produto
+
+marca_comercial	
+string
+Example: marca_comercial=Star
+Consulta contendo a marca comercial
+
+titular_registro	
+string
+Example: titular_registro=Química
+Consulta contendo o nome do titular do registro
+
+cultura	
+string
+Example: cultura=Arroz
+Consulta contendo o nome da cultura
+
+classe_categoria_agronomica	
+string
+Example: classe_categoria_agronomica=Bactericida Microbiológico
+Consulta exata a partir da classe e categoria agronônica; para obter os valores disponíveis consulte a listagem geral de classes e categorias agronômicas
+
+classificacao_ambiental	
+string
+Example: classificacao_ambiental=Produto de Baixo Risco ao Meio Ambiente
+Consulta exata a partir da classificação ambiental; para obter os valores disponíveis consulte a listagem geral de classificações ambientais
+
+classificacao_toxicologica	
+string
+Example: classificacao_toxicologica=Categoria 5 - Produto Improvável de Causar Dano Agudo
+Consulta exata a partir da classificação toxicológica; para obter os valores disponíveis consulte a listagem geral de classificações toxicológicas
+
+formulacao	
+string
+Example: formulacao=Ácaros vivos
+Consulta exata a partir da formulação; para obter os valores disponíveis consulte a listagem geral de formulações
+
+ingrediente_ativo	
+string
+Example: ingrediente_ativo=glifosato
+Consulta contendo o ingrediente ativo
+
+grupo_quimico	
+string
+Example: grupo_quimico=glicina
+Consulta contendo o grupo químico
+
+modo_acao	
+string
+Example: modo_acao=Ação protetora
+Consulta exata a partir do modo de ação; para obter os valores disponíveis consulte a listagem geral de modos de ações
+
+tecnica_aplicacao	
+string
+Example: tecnica_aplicacao=Aérea
+Consulta exata a partir da técnica de aplicação; para obter os valores disponíveis consulte a listagem geral de técnicas de aplicações
+
+produto_biologico	
+boolean
+Enum: "true" "false"
+Example: produto_biologico=true
+Consulta se o produto é de origem biológica (Bioinsumos); os valores disponíveis são: verdadeiro (true) ou falso (false)
+
+produto_agricultura_organica	
+boolean
+Enum: "true" "false"
+Example: produto_agricultura_organica=true
+Consulta se o produto fitossanitário está aprovado para uso na agricultura orgânica; os valores disponíveis são: verdadeiro (true) ou falso (false)
+
+inflamavel	
+boolean
+Enum: "true" "false"
+Consulta se o produto é inflamável; os valores disponíveis são: verdadeiro (true) ou falso (false)
+
+corrosivo	
+boolean
+Enum: "true" "false"
+Consulta se o produto é corrosivo; os valores disponíveis são: verdadeiro (true) ou falso (false)
+
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de produtos formulados
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/search/produtos-formulados
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"numero_registro": "5810",
+"marca_comercial": [],
+"titular_registro": "Prentiss Química Ltda.",
+"produto_biologico": false,
+"classe_categoria_agronomica": [],
+"formulacao": "SC - Suspensão Concentrada",
+"ingrediente_ativo": [],
+"ingrediente_ativo_detalhado": [],
+"modo_acao": [],
+"tecnica_aplicacao": [],
+"indicacao_uso": [],
+"classificacao_toxicologica": "Categoria 4 - Produto Pouco Tóxico",
+"classificacao_ambiental": "II - Produto Muito Perigoso ao Meio Ambiente",
+"inflamavel": false,
+"corrosivo": false,
+"documento_cadastrado": [],
+"produto_agricultura_organica": false,
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_produto_form_detalhe_cons?p_nr_registro=5810&p_id_produto_formulado_tecnico=8477"
+},
+{
+"numero_registro": "17621",
+"marca_comercial": [],
+"titular_registro": "Syngenta Proteção de Cultivos Ltda.",
+"produto_biologico": false,
+"classe_categoria_agronomica": [],
+"formulacao": "SL - Concentrado Solúvel",
+"ingrediente_ativo": [],
+"ingrediente_ativo_detalhado": [],
+"modo_acao": [ ],
+"tecnica_aplicacao": [],
+"indicacao_uso": [],
+"classificacao_toxicologica": "Categoria 5 - Produto Improvável de Causar Dano Agudo",
+"classificacao_ambiental": "III - Produto Perigoso ao Meio Ambiente",
+"inflamavel": false,
+"corrosivo": false,
+"documento_cadastrado": [],
+"produto_agricultura_organica": false,
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_produto_form_detalhe_cons?p_nr_registro=17621&p_id_produto_formulado_tecnico=13267"
+}
+]
+Retorna a lista de produtos formulados.
+Retorna a lista de produtos formulados.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de produtos formulados
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/produtos-formulados
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"numero_registro": "5810",
+"marca_comercial": [],
+"titular_registro": "Prentiss Química Ltda.",
+"produto_biologico": false,
+"classe_categoria_agronomica": [],
+"formulacao": "SC - Suspensão Concentrada",
+"ingrediente_ativo": [],
+"ingrediente_ativo_detalhado": [],
+"modo_acao": [],
+"tecnica_aplicacao": [],
+"indicacao_uso": [],
+"classificacao_toxicologica": "Categoria 4 - Produto Pouco Tóxico",
+"classificacao_ambiental": "II - Produto Muito Perigoso ao Meio Ambiente",
+"inflamavel": false,
+"corrosivo": false,
+"documento_cadastrado": [],
+"produto_agricultura_organica": false,
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_produto_form_detalhe_cons?p_nr_registro=5810&p_id_produto_formulado_tecnico=8477"
+},
+{
+"numero_registro": "17621",
+"marca_comercial": [],
+"titular_registro": "Syngenta Proteção de Cultivos Ltda.",
+"produto_biologico": false,
+"classe_categoria_agronomica": [],
+"formulacao": "SL - Concentrado Solúvel",
+"ingrediente_ativo": [],
+"ingrediente_ativo_detalhado": [],
+"modo_acao": [ ],
+"tecnica_aplicacao": [],
+"indicacao_uso": [],
+"classificacao_toxicologica": "Categoria 5 - Produto Improvável de Causar Dano Agudo",
+"classificacao_ambiental": "III - Produto Perigoso ao Meio Ambiente",
+"inflamavel": false,
+"corrosivo": false,
+"documento_cadastrado": [],
+"produto_agricultura_organica": false,
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_produto_form_detalhe_cons?p_nr_registro=17621&p_id_produto_formulado_tecnico=13267"
+}
+]
+Retorna o produto formulado desejado a partir do número de registro do produto.
+Retorna o produto formulado desejado a partir do número de registro do produto.
+
+path Parameters
+numero_registro
+required
+string
+Example: 5810
+Consulta exata a partir do número de registro do produto
+
+Responses
+200 Produto formulado por número do registro
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/produtos-formulados/{numero_registro}
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"numero_registro": "5810",
+"marca_comercial": [],
+"titular_registro": "Prentiss Química Ltda.",
+"produto_biologico": false,
+"classe_categoria_agronomica": [],
+"formulacao": "SC - Suspensão Concentrada",
+"ingrediente_ativo": [],
+"ingrediente_ativo_detalhado": [],
+"modo_acao": [],
+"tecnica_aplicacao": [],
+"indicacao_uso": [],
+"classificacao_toxicologica": "Categoria 4 - Produto Pouco Tóxico",
+"classificacao_ambiental": "II - Produto Muito Perigoso ao Meio Ambiente",
+"inflamavel": false,
+"corrosivo": false,
+"documento_cadastrado": [],
+"produto_agricultura_organica": false,
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_produto_form_detalhe_cons?p_nr_registro=5810&p_id_produto_formulado_tecnico=8477"
+}
+]
+Produto Técnico
+Recursos da API envolvendo informações de produtos técnicos.
+
+Retorna a lista de produtos técnicos, a partir da consulta realizada.
+Retorna a lista de produtos técnicos, a partir da consulta realizada.
+
+query Parameters
+q	
+string
+Example: q=mosca branca
+Termo de busca para a consulta
+
+numero_registro	
+string
+Example: numero_registro=TC00323
+Consulta exata a partir do número de registro do produto
+
+marca_comercial	
+string
+Example: marca_comercial=Técnico
+Consulta contendo a marca comercial
+
+titular_registro	
+string
+Example: titular_registro=Brasil
+Consulta contendo o nome do titular do registro
+
+classe_categoria_agronomica	
+string
+Example: classe_categoria_agronomica=Inseticida
+Consulta exata a partir da classe e categoria agronônica; para obter os valores disponíveis consulte a listagem geral de classes e categorias agronômicas
+
+classificacao_ambiental	
+string
+Example: classificacao_ambiental=II - Produto Muito Perigoso ao Meio Ambiente
+Consulta exata a partir da classificação ambiental; para obter os valores disponíveis consulte a listagem geral de classificações ambientais
+
+classificacao_toxicologica	
+string
+Example: classificacao_toxicologica=I - Extremamente Tóxico
+Consulta exata a partir da classificação toxicológica; para obter os valores disponíveis consulte a listagem geral de classificações toxicológicas
+
+formulacao	
+string
+Example: formulacao=TK - Técnico Concentrado
+Consulta exata a partir da formulação; para obter os valores disponíveis consulte a listagem geral de formulações
+
+ingrediente_ativo	
+string
+Example: ingrediente_ativo=cadusafos
+Consulta contendo o ingrediente ativo
+
+grupo_quimico	
+string
+Example: grupo_quimico=organofosforado
+Consulta contendo o grupo químico
+
+produto_formulado_marca_comercial	
+string
+Example: produto_formulado_marca_comercial=100
+Consulta contendo a marca comercial do produto formulado vinculado
+
+produto_formulado_numero_registro	
+string
+Example: produto_formulado_numero_registro=10401
+Consulta exata a partir do número de registro do produto formulado vinculado
+
+produto_formulado_titular_registro	
+string
+Example: produto_formulado_titular_registro=Química
+Consulta contendo o nome do titular do registro do produto formulado vinculado
+
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de produtos técnicos
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/search/produtos-tecnicos
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"numero_registro": "TC00323",
+"marca_comercial": [],
+"titular_registro": "Zhongshan Química do Brasil",
+"classe_categoria_agronomica": [],
+"ingrediente_ativo": [],
+"classificacao_toxicologica": "PT - O perfil toxicológico foi considerado equivalente ao PT de referência",
+"classificacao_ambiental": "III - Produto Perigoso ao Meio Ambiente",
+"formulacao": "TK - Técnico Concentrado",
+"ingrediente_ativo_detalhado": [],
+"documento_cadastrado": [],
+"produto_formulado_vinculado": [ ],
+"url_agrofit": "http://agrofit.agricultura.gov.br/agrofit_cons/!agrofit.ap_produto_tec_detalhe_cons?p_titulo=Consulta%20de%20Produtos%20T%C3%A9cnicos&p_id_produto_formulado_tecnico=20461"
+},
+{
+"numero_registro": "TC08922",
+"marca_comercial": [],
+"titular_registro": "Helm do Brasil Mercantil",
+"classe_categoria_agronomica": [],
+"ingrediente_ativo": [],
+"classificacao_toxicologica": "PT - O perfil toxicológico foi considerado equivalente ao PT de referência",
+"classificacao_ambiental": "III - Produto Perigoso ao Meio Ambiente",
+"formulacao": "TK - Técnico Concentrado",
+"ingrediente_ativo_detalhado": [],
+"documento_cadastrado": [],
+"produto_formulado_vinculado": [],
+"url_agrofit": "http://agrofit.agricultura.gov.br/agrofit_cons/!agrofit.ap_produto_tec_detalhe_cons?p_titulo=Consulta%20de%20Produtos%20T%C3%A9cnicos&p_id_produto_formulado_tecnico=19486"
+}
+]
+Retorna a lista de produtos técnicos.
+Retorna a lista de produtos técnicos.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de produtos técnicos
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/produtos-tecnicos
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"numero_registro": "TC00323",
+"marca_comercial": [],
+"titular_registro": "Zhongshan Química do Brasil",
+"classe_categoria_agronomica": [],
+"ingrediente_ativo": [],
+"classificacao_toxicologica": "PT - O perfil toxicológico foi considerado equivalente ao PT de referência",
+"classificacao_ambiental": "III - Produto Perigoso ao Meio Ambiente",
+"formulacao": "TK - Técnico Concentrado",
+"ingrediente_ativo_detalhado": [],
+"documento_cadastrado": [],
+"produto_formulado_vinculado": [ ],
+"url_agrofit": "http://agrofit.agricultura.gov.br/agrofit_cons/!agrofit.ap_produto_tec_detalhe_cons?p_titulo=Consulta%20de%20Produtos%20T%C3%A9cnicos&p_id_produto_formulado_tecnico=20461"
+},
+{
+"numero_registro": "TC08922",
+"marca_comercial": [],
+"titular_registro": "Helm do Brasil Mercantil",
+"classe_categoria_agronomica": [],
+"ingrediente_ativo": [],
+"classificacao_toxicologica": "PT - O perfil toxicológico foi considerado equivalente ao PT de referência",
+"classificacao_ambiental": "III - Produto Perigoso ao Meio Ambiente",
+"formulacao": "TK - Técnico Concentrado",
+"ingrediente_ativo_detalhado": [],
+"documento_cadastrado": [],
+"produto_formulado_vinculado": [],
+"url_agrofit": "http://agrofit.agricultura.gov.br/agrofit_cons/!agrofit.ap_produto_tec_detalhe_cons?p_titulo=Consulta%20de%20Produtos%20T%C3%A9cnicos&p_id_produto_formulado_tecnico=19486"
+}
+]
+Retorna o produto técnico desejado a partir do número de registro do produto.
+Retorna o produto técnico desejado a partir do número de registro do produto.
+
+path Parameters
+numero_registro
+required
+string
+Example: TC00323
+Consulta exata a partir do número de registro do produto
+
+Responses
+200 Produto técnico por número do registro
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/produtos-tecnicos/{numero_registro}
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"numero_registro": "TC00323",
+"marca_comercial": [],
+"titular_registro": "Zhongshan Química do Brasil",
+"classe_categoria_agronomica": [],
+"ingrediente_ativo": [],
+"classificacao_toxicologica": "PT - O perfil toxicológico foi considerado equivalente ao PT de referência",
+"classificacao_ambiental": "III - Produto Perigoso ao Meio Ambiente",
+"formulacao": "TK - Técnico Concentrado",
+"ingrediente_ativo_detalhado": [],
+"documento_cadastrado": [],
+"produto_formulado_vinculado": [ ],
+"url_agrofit": "http://agrofit.agricultura.gov.br/agrofit_cons/!agrofit.ap_produto_tec_detalhe_cons?p_titulo=Consulta%20de%20Produtos%20T%C3%A9cnicos&p_id_produto_formulado_tecnico=20461"
+}
+]
+Search
+Recursos da API envolvendo o mecanimo de busca e consulta avançado.
+
+Retorna a lista de titutlares de registros, a partir da consulta realizada.
+Retorna a lista de titutlares de registros, a partir da consulta realizada.
+
+query Parameters
+q	
+string
+Example: q=Bayer
+Termo de busca para a consulta
+
+nome	
+string
+Example: nome=Bay
+Consulta contendo o nome do titular do registro
+
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de titulares de registros
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/search/titulares-registros
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Acrom Agroindustrial Ltda"
+},
+{
+"nome": "Adama Brasil S.A."
+},
+{
+"nome": "ADM do Brasil Ltda."
+},
+{
+"nome": "Agbitech Controles Biológicos Ltda"
+},
+{
+"nome": "Agrária Indústria e Comércio Ltda."
+},
+{
+"nome": "Agrichem do Brasil S.A."
+},
+{
+"nome": "Agriconnection Importadora e Exportadora de Insumos Agricolas Ltda."
+},
+{
+"nome": "Agritec Ind. Brasileira de Herbicidas Ltda."
+},
+{
+"nome": "Agrivalle Brasil Indústria e Comércio de Produtos Agrícolas S.A."
+},
+{
+"nome": "Agro Import do Brasil Ltda."
+},
+{
+"nome": "Agrobiológica Sustentabilidade S.A."
+},
+{
+"nome": "Agrobiotech Agronegocio Ltda"
+},
+{
+"nome": "Agrocete Industria de Fertilizantes Ltda"
+},
+{
+"nome": "AgroFresh Brasil Ltda."
+},
+{
+"nome": "Agronatural Comércio de Defensivos Biológicos e Serviços Técnicos Ltda"
+},
+{
+"nome": "Agropaulo Agroindustrial S.A."
+},
+{
+"nome": "Alamos do Brasil Ltda."
+},
+{
+"nome": "Albaugh Agro Brasil Ltda."
+},
+{
+"nome": "AllierBrasil Agro Ltda."
+},
+{
+"nome": "ALTA - America Latina Tecnologia Agrícola Ltda."
+},
+{
+"nome": "Amaggi Exportação e Importação Ltda"
+},
+{
+"nome": "Ameribrás Indústria e Comércio Ltda."
+},
+{
+"nome": "AMVAC do Brasil 3P Ltda,"
+},
+{
+"nome": "AMVAC do Brasil Importação e Comércio de Insumos Agrícolas Ltda"
+},
+{
+"nome": "ANASAC Brasil Comercio e Locação de Máquinas Ltda."
+},
+{
+"nome": "Ancom do Brasil Ltda."
+},
+{
+"nome": "Andermatt do Brasil Soluções Biológicas Ltda - ME"
+},
+{
+"nome": "Associação de Plantadores de Cana da Paraiba"
+},
+{
+"nome": "Associação dos Empregados da EMBRAPA"
+},
+{
+"nome": "Associação Mineira dos Produtores de Algodão"
+},
+{
+"nome": "Atta Kill Ind. e Com. de Def. Agric. Ltda."
+},
+{
+"nome": "Auca Controle Biológico Ltda-ME"
+},
+{
+"nome": "Avgust Crop Protection Importação e Exportação Ltda."
+},
+{
+"nome": "Ballagro Agro Tecnologia Ltda."
+},
+{
+"nome": "Base Biotecnologia Ltda"
+},
+{
+"nome": "Basf S.A."
+},
+{
+"nome": "Bayer S.A."
+},
+{
+"nome": "Bem Brasil Alimentos S/A."
+},
+{
+"nome": "Bequisa Indústria Química do Brasil Ltda."
+},
+{
+"nome": "Bio Controle - Métodos de Controle de Pragas Ltda."
+},
+{
+"nome": "Bio Defense - Controle Biológico Ltda - ME"
+},
+{
+"nome": "Bio Springer do Brasil Indústria de Alimentos S.A."
+},
+{
+"nome": "Bioeco Cana Produtos Biologicos Ltda - ME"
+},
+{
+"nome": "Bioeffect Controle Biológico de Pragas Ltda."
+},
+{
+"nome": "Bioenergia do Brasil S.A."
+},
+{
+"nome": "Biofabrica Moscamed Brasil - Biomoscamed"
+},
+{
+"nome": "Biofungi Ind. e Com. de Def. Biológicos e Inoculantes Ltda."
+},
+{
+"nome": "Biogrow do Brasil Ltda."
+},
+{
+"nome": "BioIn Biotecnologia Ltda."
+},
+{
+"nome": "Bioma Indústria Comércio e Distribuição Ltda"
+}
+]
+Retorna a lista de produtos técnicos, a partir da consulta realizada.
+Retorna a lista de produtos técnicos, a partir da consulta realizada.
+
+query Parameters
+q	
+string
+Example: q=mosca branca
+Termo de busca para a consulta
+
+numero_registro	
+string
+Example: numero_registro=TC00323
+Consulta exata a partir do número de registro do produto
+
+marca_comercial	
+string
+Example: marca_comercial=Técnico
+Consulta contendo a marca comercial
+
+titular_registro	
+string
+Example: titular_registro=Brasil
+Consulta contendo o nome do titular do registro
+
+classe_categoria_agronomica	
+string
+Example: classe_categoria_agronomica=Inseticida
+Consulta exata a partir da classe e categoria agronônica; para obter os valores disponíveis consulte a listagem geral de classes e categorias agronômicas
+
+classificacao_ambiental	
+string
+Example: classificacao_ambiental=II - Produto Muito Perigoso ao Meio Ambiente
+Consulta exata a partir da classificação ambiental; para obter os valores disponíveis consulte a listagem geral de classificações ambientais
+
+classificacao_toxicologica	
+string
+Example: classificacao_toxicologica=I - Extremamente Tóxico
+Consulta exata a partir da classificação toxicológica; para obter os valores disponíveis consulte a listagem geral de classificações toxicológicas
+
+formulacao	
+string
+Example: formulacao=TK - Técnico Concentrado
+Consulta exata a partir da formulação; para obter os valores disponíveis consulte a listagem geral de formulações
+
+ingrediente_ativo	
+string
+Example: ingrediente_ativo=cadusafos
+Consulta contendo o ingrediente ativo
+
+grupo_quimico	
+string
+Example: grupo_quimico=organofosforado
+Consulta contendo o grupo químico
+
+produto_formulado_marca_comercial	
+string
+Example: produto_formulado_marca_comercial=100
+Consulta contendo a marca comercial do produto formulado vinculado
+
+produto_formulado_numero_registro	
+string
+Example: produto_formulado_numero_registro=10401
+Consulta exata a partir do número de registro do produto formulado vinculado
+
+produto_formulado_titular_registro	
+string
+Example: produto_formulado_titular_registro=Química
+Consulta contendo o nome do titular do registro do produto formulado vinculado
+
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de produtos técnicos
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/search/produtos-tecnicos
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"numero_registro": "TC00323",
+"marca_comercial": [],
+"titular_registro": "Zhongshan Química do Brasil",
+"classe_categoria_agronomica": [],
+"ingrediente_ativo": [],
+"classificacao_toxicologica": "PT - O perfil toxicológico foi considerado equivalente ao PT de referência",
+"classificacao_ambiental": "III - Produto Perigoso ao Meio Ambiente",
+"formulacao": "TK - Técnico Concentrado",
+"ingrediente_ativo_detalhado": [],
+"documento_cadastrado": [],
+"produto_formulado_vinculado": [ ],
+"url_agrofit": "http://agrofit.agricultura.gov.br/agrofit_cons/!agrofit.ap_produto_tec_detalhe_cons?p_titulo=Consulta%20de%20Produtos%20T%C3%A9cnicos&p_id_produto_formulado_tecnico=20461"
+},
+{
+"numero_registro": "TC08922",
+"marca_comercial": [],
+"titular_registro": "Helm do Brasil Mercantil",
+"classe_categoria_agronomica": [],
+"ingrediente_ativo": [],
+"classificacao_toxicologica": "PT - O perfil toxicológico foi considerado equivalente ao PT de referência",
+"classificacao_ambiental": "III - Produto Perigoso ao Meio Ambiente",
+"formulacao": "TK - Técnico Concentrado",
+"ingrediente_ativo_detalhado": [],
+"documento_cadastrado": [],
+"produto_formulado_vinculado": [],
+"url_agrofit": "http://agrofit.agricultura.gov.br/agrofit_cons/!agrofit.ap_produto_tec_detalhe_cons?p_titulo=Consulta%20de%20Produtos%20T%C3%A9cnicos&p_id_produto_formulado_tecnico=19486"
+}
+]
+Retorna a lista de produtos formulados, a partir da consulta realizada.
+Retorna a lista de produtos formulados, a partir da consulta realizada.
+
+query Parameters
+q	
+string
+Example: q=mosca branca
+Termo de busca para a consulta
+
+praga_nome_cientifico	
+string
+Example: praga_nome_cientifico=Bemisia tabaci raça B
+Consulta contendo o nome científico da praga
+
+praga_nome_comum	
+string
+Example: praga_nome_comum=Mosca branca
+Consulta contendo o nome comum da praga
+
+numero_registro	
+string
+Example: numero_registro=5810
+Consulta exata a partir do número de registro do produto
+
+marca_comercial	
+string
+Example: marca_comercial=Star
+Consulta contendo a marca comercial
+
+titular_registro	
+string
+Example: titular_registro=Química
+Consulta contendo o nome do titular do registro
+
+cultura	
+string
+Example: cultura=Arroz
+Consulta contendo o nome da cultura
+
+classe_categoria_agronomica	
+string
+Example: classe_categoria_agronomica=Bactericida Microbiológico
+Consulta exata a partir da classe e categoria agronônica; para obter os valores disponíveis consulte a listagem geral de classes e categorias agronômicas
+
+classificacao_ambiental	
+string
+Example: classificacao_ambiental=Produto de Baixo Risco ao Meio Ambiente
+Consulta exata a partir da classificação ambiental; para obter os valores disponíveis consulte a listagem geral de classificações ambientais
+
+classificacao_toxicologica	
+string
+Example: classificacao_toxicologica=Categoria 5 - Produto Improvável de Causar Dano Agudo
+Consulta exata a partir da classificação toxicológica; para obter os valores disponíveis consulte a listagem geral de classificações toxicológicas
+
+formulacao	
+string
+Example: formulacao=Ácaros vivos
+Consulta exata a partir da formulação; para obter os valores disponíveis consulte a listagem geral de formulações
+
+ingrediente_ativo	
+string
+Example: ingrediente_ativo=glifosato
+Consulta contendo o ingrediente ativo
+
+grupo_quimico	
+string
+Example: grupo_quimico=glicina
+Consulta contendo o grupo químico
+
+modo_acao	
+string
+Example: modo_acao=Ação protetora
+Consulta exata a partir do modo de ação; para obter os valores disponíveis consulte a listagem geral de modos de ações
+
+tecnica_aplicacao	
+string
+Example: tecnica_aplicacao=Aérea
+Consulta exata a partir da técnica de aplicação; para obter os valores disponíveis consulte a listagem geral de técnicas de aplicações
+
+produto_biologico	
+boolean
+Enum: "true" "false"
+Example: produto_biologico=true
+Consulta se o produto é de origem biológica (Bioinsumos); os valores disponíveis são: verdadeiro (true) ou falso (false)
+
+produto_agricultura_organica	
+boolean
+Enum: "true" "false"
+Example: produto_agricultura_organica=true
+Consulta se o produto fitossanitário está aprovado para uso na agricultura orgânica; os valores disponíveis são: verdadeiro (true) ou falso (false)
+
+inflamavel	
+boolean
+Enum: "true" "false"
+Consulta se o produto é inflamável; os valores disponíveis são: verdadeiro (true) ou falso (false)
+
+corrosivo	
+boolean
+Enum: "true" "false"
+Consulta se o produto é corrosivo; os valores disponíveis são: verdadeiro (true) ou falso (false)
+
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de produtos formulados
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/search/produtos-formulados
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"numero_registro": "5810",
+"marca_comercial": [],
+"titular_registro": "Prentiss Química Ltda.",
+"produto_biologico": false,
+"classe_categoria_agronomica": [],
+"formulacao": "SC - Suspensão Concentrada",
+"ingrediente_ativo": [],
+"ingrediente_ativo_detalhado": [],
+"modo_acao": [],
+"tecnica_aplicacao": [],
+"indicacao_uso": [],
+"classificacao_toxicologica": "Categoria 4 - Produto Pouco Tóxico",
+"classificacao_ambiental": "II - Produto Muito Perigoso ao Meio Ambiente",
+"inflamavel": false,
+"corrosivo": false,
+"documento_cadastrado": [],
+"produto_agricultura_organica": false,
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_produto_form_detalhe_cons?p_nr_registro=5810&p_id_produto_formulado_tecnico=8477"
+},
+{
+"numero_registro": "17621",
+"marca_comercial": [],
+"titular_registro": "Syngenta Proteção de Cultivos Ltda.",
+"produto_biologico": false,
+"classe_categoria_agronomica": [],
+"formulacao": "SL - Concentrado Solúvel",
+"ingrediente_ativo": [],
+"ingrediente_ativo_detalhado": [],
+"modo_acao": [ ],
+"tecnica_aplicacao": [],
+"indicacao_uso": [],
+"classificacao_toxicologica": "Categoria 5 - Produto Improvável de Causar Dano Agudo",
+"classificacao_ambiental": "III - Produto Perigoso ao Meio Ambiente",
+"inflamavel": false,
+"corrosivo": false,
+"documento_cadastrado": [],
+"produto_agricultura_organica": false,
+"url_agrofit": "https://agrofit.agricultura.gov.br/agrofit_cons/!ap_produto_form_detalhe_cons?p_nr_registro=17621&p_id_produto_formulado_tecnico=13267"
+}
+]
+Retorna a lista de nomes comuns de pragas, a partir da consulta realizada.
+Retorna a lista de nomes comuns de pragas, a partir da consulta realizada.
+
+query Parameters
+q	
+string
+Example: q=Ácaro
+Termo de busca para a consulta
+
+nome	
+string
+Example: nome=Áca
+Consulta contendo o nome comum da praga
+
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de nomes comuns de pragas
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/search/pragas-nomes-comuns
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Abelha-arapuá"
+},
+{
+"nome": "Ácaro"
+},
+{
+"nome": "Ácaro  branco"
+},
+{
+"nome": "Ácaro branco"
+},
+{
+"nome": "Ácaro da falsa ferrugem"
+},
+{
+"nome": "Acaro da necrose"
+},
+{
+"nome": "Ácaro do bronzeado"
+},
+{
+"nome": "Ácaro do coqueiro"
+},
+{
+"nome": "ácaro plano"
+},
+{
+"nome": "Ácaro rajado"
+},
+{
+"nome": "Ácaro vermelho"
+},
+{
+"nome": "Ácaro vermelho das palmeiras"
+},
+{
+"nome": "Ácaro-alaranjado"
+},
+{
+"nome": "Ácaro-branco"
+},
+{
+"nome": "Ácaro-bronzeado"
+},
+{
+"nome": "Ácaro-bronzeador"
+},
+{
+"nome": "Ácaro-da-erinose-da-videira"
+},
+{
+"nome": "Ácaro-da-falsa-ferrugem"
+},
+{
+"nome": "Ácaro-da-leprose"
+},
+{
+"nome": "acaro-da-lichia"
+},
+{
+"nome": "Ácaro-da-macieira"
+},
+{
+"nome": "Ácaro-da-mal-formação-das-gemas"
+},
+{
+"nome": "Ácaro-da-mulata"
+},
+{
+"nome": "Ácaro-da-necrose-do-coqueiro"
+},
+{
+"nome": "Ácaro-das-flores-do-abacateiro"
+},
+{
+"nome": "Ácaro-das-gemas"
+},
+{
+"nome": "Ácaro-do-bronzeado"
+},
+{
+"nome": "Ácaro-do-bronzeamento"
+},
+{
+"nome": "Ácaro-do-coqueiro"
+},
+{
+"nome": "Ácaro-do-enfezamento"
+},
+{
+"nome": "Ácaro-do-morangueiro"
+},
+{
+"nome": "Ácaro-plano"
+},
+{
+"nome": "ácaro-plano"
+},
+{
+"nome": "Ácaro-plano-da-base-das-folhas"
+},
+{
+"nome": "Ácaro-prateado"
+},
+{
+"nome": "Ácaro-purpúreo"
+},
+{
+"nome": "Acaro-rajado"
+},
+{
+"nome": "ácaro-rajado"
+},
+{
+"nome": "Ácaro-rajado"
+},
+{
+"nome": "Ácaro-rajado."
+},
+{
+"nome": "Ácaro-roxo"
+},
+{
+"nome": "Ácaro-texano"
+},
+{
+"nome": "Ácaro-tropical"
+},
+{
+"nome": "Ácaro-verde"
+},
+{
+"nome": "Ácaro-verde-do-feijoeiro"
+},
+{
+"nome": "Ácaro-vermelho"
+},
+{
+"nome": "Ácaro-vermelho-da-macieira"
+},
+{
+"nome": "Ácaro-vermelho-doamendoim"
+},
+{
+"nome": "Ácaro-vermelho-europeu"
+},
+{
+"nome": "Ácaros vermelhos"
+},
+{
+"nome": "Ácaros-vermelhos"
+},
+{
+"nome": "Afídeo"
+},
+{
+"nome": "Afídio de feijão preto"
+},
+{
+"nome": "alternaria"
+},
+{
+"nome": "Alternaria"
+},
+{
+"nome": "Alternaria púrpura"
+},
+{
+"nome": "Alternariose"
+},
+{
+"nome": "Amarelão"
+},
+{
+"nome": "Amarelecimento-de-Fusarium"
+},
+{
+"nome": "Amarelinho"
+},
+{
+"nome": "Amarelo-letal-do-mamoeiro"
+},
+{
+"nome": "Ampola"
+},
+{
+"nome": "Ampola-da-erva-mate"
+},
+{
+"nome": "Anel-vermelho"
+},
+{
+"nome": "antracnose"
+},
+{
+"nome": "Antracnose"
+},
+{
+"nome": "Antracnose da framboesa"
+},
+{
+"nome": "Antracnose do abacateiro"
+},
+{
+"nome": "Antracnose foliar"
+},
+{
+"nome": "Antracnose-da-cebola-branca"
+},
+{
+"nome": "Antracnose-da-lentilha"
+},
+{
+"nome": "Antracnose-do-colmo"
+},
+{
+"nome": "Antracnose-do-guaraná"
+},
+{
+"nome": "Antracnose-do-rizoma"
+},
+{
+"nome": "Antracnose-dos-frutos"
+}
+]
+Retorna a lista de nomes científicos de pragas, a partir da consulta realizada.
+Retorna a lista de nomes científicos de pragas, a partir da consulta realizada.
+
+query Parameters
+q	
+string
+Example: q=Alabama
+Termo de busca para a consulta
+
+nome	
+string
+Example: nome=Alab
+Consulta contendo o nome científico da praga
+
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de nomes científicos de pragas
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/search/pragas-nomes-cientificos
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Acidovorax avenae subsp. avenae"
+},
+{
+"nome": "Alabama argillacea"
+},
+{
+"nome": "Aleurocanthus woglumi"
+},
+{
+"nome": "Alternaria alternata"
+},
+{
+"nome": "Alternaria dauci"
+},
+{
+"nome": "Alternaria porri"
+},
+{
+"nome": "Alternaria solani"
+},
+{
+"nome": "Anastrepha spp."
+},
+{
+"nome": "Anthonomus grandis"
+},
+{
+"nome": "Anticarsia gemmatalis"
+},
+{
+"nome": "Aphis gossypii"
+}
+]
+Retorna a lista de classes e categorias agronômicas, a partir da consulta realizada.
+Retorna a lista de classes e categorias agronômicas, a partir da consulta realizada.
+
+query Parameters
+q	
+string
+Example: q=Acaricida Microbiológico
+Termo de busca para a consulta
+
+nome	
+string
+Example: nome=Acaricid
+Consulta contendo o nome da classe e categoria agronômica
+
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de classes e categorias agronômicas
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/search/classes-categorias-agronomicas
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Acaricida"
+},
+{
+"nome": "Acaricida Microbiológico"
+},
+{
+"nome": "Agente Biológico de Controle"
+},
+{
+"nome": "Ativador de planta"
+},
+{
+"nome": "Bactericida"
+},
+{
+"nome": "Bactericida Microbiológico"
+},
+{
+"nome": "Cupinicida"
+},
+{
+"nome": "Feromônio"
+},
+{
+"nome": "Formicida"
+},
+{
+"nome": "Fungicida"
+},
+{
+"nome": "Fungicida microbiológico"
+},
+{
+"nome": "Herbicida"
+},
+{
+"nome": "Inseticida"
+},
+{
+"nome": "Inseticida fumigante"
+},
+{
+"nome": "Inseticida Microbiológico"
+},
+{
+"nome": "Moluscicida"
+},
+{
+"nome": "Nematicida"
+},
+{
+"nome": "Nematicida Microbiológico"
+},
+{
+"nome": "Protetor de sementes"
+},
+{
+"nome": "Regulador de Crescimento"
+}
+]
+Técnica de Aplicação
+Recursos da API envolvendo informações de modos de técnicas de aplicações.
+
+Retorna a lista de técnicas de aplicações.
+Retorna a lista de técnicas de aplicações.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de técnicas de aplicações
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/tecnicas-aplicacoes
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Aérea"
+},
+{
+"nome": "aplicação foliar"
+},
+{
+"nome": "Armadilhas"
+},
+{
+"nome": "Terrestre"
+},
+{
+"nome": "Trat. Grãos Armazenados"
+},
+{
+"nome": "Trat. Sementes"
+},
+{
+"nome": "Tratamento de sementes"
+}
+]
+Titular de Registro
+Recursos da API envolvendo informações de modos de titulares de registros.
+
+Retorna a lista de titutlares de registros.
+Retorna a lista de titulares de registros.
+
+query Parameters
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de titulares de registros
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/titulares-registros
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Acrom Agroindustrial Ltda"
+},
+{
+"nome": "Adama Brasil S.A."
+},
+{
+"nome": "ADM do Brasil Ltda."
+},
+{
+"nome": "Agbitech Controles Biológicos Ltda"
+},
+{
+"nome": "Agrária Indústria e Comércio Ltda."
+},
+{
+"nome": "Agrichem do Brasil S.A."
+},
+{
+"nome": "Agriconnection Importadora e Exportadora de Insumos Agricolas Ltda."
+},
+{
+"nome": "Agritec Ind. Brasileira de Herbicidas Ltda."
+},
+{
+"nome": "Agrivalle Brasil Indústria e Comércio de Produtos Agrícolas S.A."
+},
+{
+"nome": "Agro Import do Brasil Ltda."
+},
+{
+"nome": "Agrobiológica Sustentabilidade S.A."
+},
+{
+"nome": "Agrobiotech Agronegocio Ltda"
+},
+{
+"nome": "Agrocete Industria de Fertilizantes Ltda"
+},
+{
+"nome": "AgroFresh Brasil Ltda."
+},
+{
+"nome": "Agronatural Comércio de Defensivos Biológicos e Serviços Técnicos Ltda"
+},
+{
+"nome": "Agropaulo Agroindustrial S.A."
+},
+{
+"nome": "Alamos do Brasil Ltda."
+},
+{
+"nome": "Albaugh Agro Brasil Ltda."
+},
+{
+"nome": "AllierBrasil Agro Ltda."
+},
+{
+"nome": "ALTA - America Latina Tecnologia Agrícola Ltda."
+},
+{
+"nome": "Amaggi Exportação e Importação Ltda"
+},
+{
+"nome": "Ameribrás Indústria e Comércio Ltda."
+},
+{
+"nome": "AMVAC do Brasil 3P Ltda,"
+},
+{
+"nome": "AMVAC do Brasil Importação e Comércio de Insumos Agrícolas Ltda"
+},
+{
+"nome": "ANASAC Brasil Comercio e Locação de Máquinas Ltda."
+},
+{
+"nome": "Ancom do Brasil Ltda."
+},
+{
+"nome": "Andermatt do Brasil Soluções Biológicas Ltda - ME"
+},
+{
+"nome": "Associação de Plantadores de Cana da Paraiba"
+},
+{
+"nome": "Associação dos Empregados da EMBRAPA"
+},
+{
+"nome": "Associação Mineira dos Produtores de Algodão"
+},
+{
+"nome": "Atta Kill Ind. e Com. de Def. Agric. Ltda."
+},
+{
+"nome": "Auca Controle Biológico Ltda-ME"
+},
+{
+"nome": "Avgust Crop Protection Importação e Exportação Ltda."
+},
+{
+"nome": "Ballagro Agro Tecnologia Ltda."
+},
+{
+"nome": "Base Biotecnologia Ltda"
+},
+{
+"nome": "Basf S.A."
+},
+{
+"nome": "Bayer S.A."
+},
+{
+"nome": "Bem Brasil Alimentos S/A."
+},
+{
+"nome": "Bequisa Indústria Química do Brasil Ltda."
+},
+{
+"nome": "Bio Controle - Métodos de Controle de Pragas Ltda."
+},
+{
+"nome": "Bio Defense - Controle Biológico Ltda - ME"
+},
+{
+"nome": "Bio Springer do Brasil Indústria de Alimentos S.A."
+},
+{
+"nome": "Bioeco Cana Produtos Biologicos Ltda - ME"
+},
+{
+"nome": "Bioeffect Controle Biológico de Pragas Ltda."
+},
+{
+"nome": "Bioenergia do Brasil S.A."
+},
+{
+"nome": "Biofabrica Moscamed Brasil - Biomoscamed"
+},
+{
+"nome": "Biofungi Ind. e Com. de Def. Biológicos e Inoculantes Ltda."
+},
+{
+"nome": "Biogrow do Brasil Ltda."
+},
+{
+"nome": "BioIn Biotecnologia Ltda."
+},
+{
+"nome": "Bioma Indústria Comércio e Distribuição Ltda"
+}
+]
+Retorna a lista de titutlares de registros, a partir da consulta realizada.
+Retorna a lista de titutlares de registros, a partir da consulta realizada.
+
+query Parameters
+q	
+string
+Example: q=Bayer
+Termo de busca para a consulta
+
+nome	
+string
+Example: nome=Bay
+Consulta contendo o nome do titular do registro
+
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de titulares de registros
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/search/titulares-registros
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Acrom Agroindustrial Ltda"
+},
+{
+"nome": "Adama Brasil S.A."
+},
+{
+"nome": "ADM do Brasil Ltda."
+},
+{
+"nome": "Agbitech Controles Biológicos Ltda"
+},
+{
+"nome": "Agrária Indústria e Comércio Ltda."
+},
+{
+"nome": "Agrichem do Brasil S.A."
+},
+{
+"nome": "Agriconnection Importadora e Exportadora de Insumos Agricolas Ltda."
+},
+{
+"nome": "Agritec Ind. Brasileira de Herbicidas Ltda."
+},
+{
+"nome": "Agrivalle Brasil Indústria e Comércio de Produtos Agrícolas S.A."
+},
+{
+"nome": "Agro Import do Brasil Ltda."
+},
+{
+"nome": "Agrobiológica Sustentabilidade S.A."
+},
+{
+"nome": "Agrobiotech Agronegocio Ltda"
+},
+{
+"nome": "Agrocete Industria de Fertilizantes Ltda"
+},
+{
+"nome": "AgroFresh Brasil Ltda."
+},
+{
+"nome": "Agronatural Comércio de Defensivos Biológicos e Serviços Técnicos Ltda"
+},
+{
+"nome": "Agropaulo Agroindustrial S.A."
+},
+{
+"nome": "Alamos do Brasil Ltda."
+},
+{
+"nome": "Albaugh Agro Brasil Ltda."
+},
+{
+"nome": "AllierBrasil Agro Ltda."
+},
+{
+"nome": "ALTA - America Latina Tecnologia Agrícola Ltda."
+},
+{
+"nome": "Amaggi Exportação e Importação Ltda"
+},
+{
+"nome": "Ameribrás Indústria e Comércio Ltda."
+},
+{
+"nome": "AMVAC do Brasil 3P Ltda,"
+},
+{
+"nome": "AMVAC do Brasil Importação e Comércio de Insumos Agrícolas Ltda"
+},
+{
+"nome": "ANASAC Brasil Comercio e Locação de Máquinas Ltda."
+},
+{
+"nome": "Ancom do Brasil Ltda."
+},
+{
+"nome": "Andermatt do Brasil Soluções Biológicas Ltda - ME"
+},
+{
+"nome": "Associação de Plantadores de Cana da Paraiba"
+},
+{
+"nome": "Associação dos Empregados da EMBRAPA"
+},
+{
+"nome": "Associação Mineira dos Produtores de Algodão"
+},
+{
+"nome": "Atta Kill Ind. e Com. de Def. Agric. Ltda."
+},
+{
+"nome": "Auca Controle Biológico Ltda-ME"
+},
+{
+"nome": "Avgust Crop Protection Importação e Exportação Ltda."
+},
+{
+"nome": "Ballagro Agro Tecnologia Ltda."
+},
+{
+"nome": "Base Biotecnologia Ltda"
+},
+{
+"nome": "Basf S.A."
+},
+{
+"nome": "Bayer S.A."
+},
+{
+"nome": "Bem Brasil Alimentos S/A."
+},
+{
+"nome": "Bequisa Indústria Química do Brasil Ltda."
+},
+{
+"nome": "Bio Controle - Métodos de Controle de Pragas Ltda."
+},
+{
+"nome": "Bio Defense - Controle Biológico Ltda - ME"
+},
+{
+"nome": "Bio Springer do Brasil Indústria de Alimentos S.A."
+},
+{
+"nome": "Bioeco Cana Produtos Biologicos Ltda - ME"
+},
+{
+"nome": "Bioeffect Controle Biológico de Pragas Ltda."
+},
+{
+"nome": "Bioenergia do Brasil S.A."
+},
+{
+"nome": "Biofabrica Moscamed Brasil - Biomoscamed"
+},
+{
+"nome": "Biofungi Ind. e Com. de Def. Biológicos e Inoculantes Ltda."
+},
+{
+"nome": "Biogrow do Brasil Ltda."
+},
+{
+"nome": "BioIn Biotecnologia Ltda."
+},
+{
+"nome": "Bioma Indústria Comércio e Distribuição Ltda"
+}
+]
+Retorna a lista de classes e categorias agronômicas, a partir da consulta realizada.
+Retorna a lista de classes e categorias agronômicas, a partir da consulta realizada.
+
+query Parameters
+q	
+string
+Example: q=Acaricida Microbiológico
+Termo de busca para a consulta
+
+nome	
+string
+Example: nome=Acaricid
+Consulta contendo o nome da classe e categoria agronômica
+
+page	
+integer
+Default: 1
+Example: page=1
+Número da página desejada para recursos (endpoints) paginados
+
+Responses
+200 Lista de classes e categorias agronômicas
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/search/classes-categorias-agronomicas
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"nome": "Acaricida"
+},
+{
+"nome": "Acaricida Microbiológico"
+},
+{
+"nome": "Agente Biológico de Controle"
+},
+{
+"nome": "Ativador de planta"
+},
+{
+"nome": "Bactericida"
+},
+{
+"nome": "Bactericida Microbiológico"
+},
+{
+"nome": "Cupinicida"
+},
+{
+"nome": "Feromônio"
+},
+{
+"nome": "Formicida"
+},
+{
+"nome": "Fungicida"
+},
+{
+"nome": "Fungicida microbiológico"
+},
+{
+"nome": "Herbicida"
+},
+{
+"nome": "Inseticida"
+},
+{
+"nome": "Inseticida fumigante"
+},
+{
+"nome": "Inseticida Microbiológico"
+},
+{
+"nome": "Moluscicida"
+},
+{
+"nome": "Nematicida"
+},
+{
+"nome": "Nematicida Microbiológico"
+},
+{
+"nome": "Protetor de sementes"
+},
+{
+"nome": "Regulador de Crescimento"
+}
+]
+Versão
+Recursos da API envolvendo informações da versão da API e dos dados disponibilizados.
+
+Retorna as informações sobre a versão dos dados disponíveis na API.
+Retorna as informações sobre a versão dos dados disponíveis na API.
+
+query Parameters
+page	
+integer <int32>
+Default: 1
+Responses
+200 Informações sobre a versão dos dados disponíveis na API
+400 Requisição inválida.
+500 Erro interno inesperado no sistema.
+
+get
+/versao
+
+Response samples
+200400500
+Content type
+application/json
+
+Copy
+Expand allCollapse all
+[
+{
+"fonte": "https://agrofit.agricultura.gov.br/agrofit_cons/principal_agrofit_cons",
+"mantenedor": "Coordenação-Geral de Agrotóxicos e Afins – CGAA/DSV/SDA",
+"frequencia_de_atualizacao": "Diária",
+"codificacao": "utf-8",
+"url_mapa_dados": "https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit",
+"ultima_publicacao": "2023-08-24T22:43:36-03:00",
+"criada_em": "2021-01-20T09:44:48-0200",
+"ultima_atualizacao": "2023-08-24T09:30:05-0300",
+"id": "64e807628f99765978390a62"
+}
+]
