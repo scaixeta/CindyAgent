@@ -2,82 +2,122 @@
 
 ## Visão Geral
 
-Cindy Agent é um orquestrador de agentes AI construído sobre o framework Hermes, com governança DOC2.5.
+Cindy Agent é o repositório-base da Cindy, usado para integrar:
+
+- governança DOC2.5
+- runtime Hermes em WSL
+- persona operacional da Cindy
+- canal Telegram
+- documentação e rastreabilidade
+- futura replicação controlada para outros projetos da Cindy
 
 ## Arquitetura de Alto Nível
 
-```
-┌─────────────────────────────────────────────┐
-│              Cindy Agent                     │
-│  (Orquestrador + Governança DOC2.5)          │
-└─────────────────┬───────────────────────────┘
-                  │
-        ┌─────────┴──────────┐
-        │                      │
-   ┌────▼────┐           ┌───▼────┐
-   │ Hermes  │           │ Telegram│
-   │ (Motor  │           │ (Canal  │
-   │   IA)   │           │  Comum) │
-   └─────────┘           └─────────┘
-```
-
-## Componentes
-
-### Hermes Framework
-
-Motor de IA que orchestru:
-
-- Execução de agentes (Cline, Codex, Antigravity)
-- Gerenciamento de contexto e memória
-- Integração com tools e skills
-
-### Cindy (Orquestradora)
-
-- Identifica runtime ativo (Cline/Codex/Antigravity)
-- Seleciona skills/workflows conforme contexto
-- Aplica gates DOC2.5
-
-### Telegram
-
-Canal de comunicação para interação com o agente.
-
-## Runtimes Suportados
-
-| Runtime | Entry Point | Skills |
-|---------|-------------|--------|
-| Cline | `.clinerules/` | `.cline/skills/` |
-| Codex | `.codex/` | `.codex/skills/` |
-| Antigravity | `.agents/` | `.agents/skills/` |
-
-## Estrutura de Diretórios
-
-```
-cindyagent/
-├── .agents/          # Skills canônicas + GSD
-├── .cline/           # Runtime Cline
-├── .clinerules/      # Workflows DOC2.5
-├── .codex/           # Runtime Codex
-├── rules/            # Regras operacionais
-├── docs/             # Documentação canônica
-└── Sprint/           # Sprints encerradas
+```text
+┌──────────────────────────────────────────────────────┐
+│                    Cindy Agent                      │
+│        governança + docs + KB + tracking            │
+└───────────────┬───────────────────────┬─────────────┘
+                │                       │
+                │                       │
+        ┌───────▼────────┐      ┌──────▼────────┐
+        │ KB/hermes       │      │ rules/ + DOC2.5│
+        │ persona canônica│      │ governança     │
+        └───────┬─────────┘      └──────┬─────────┘
+                │                       │
+                └──────────┬────────────┘
+                           │
+                    ┌──────▼────────────────────────┐
+                    │ /root/.hermes (runtime vivo)  │
+                    │ Hermes + memórias + config    │
+                    └──────┬────────────────────────┘
+                           │
+                    ┌──────▼─────────┐
+                    │ Telegram Gateway│
+                    └─────────────────┘
 ```
 
-## Fluxo de Execução
+## Componentes principais
 
-1. Mensagem via Telegram
-2. Hermes processa e roteia
-3. Cindy identifica contexto (runtime, workspace)
-4. Skill/workflow correto é selecionado
-5. Execução com gates DOC2.5
-6. Resposta via Telegram
+### 1. Repositório-base Cindy Agent
 
-## Pendente de Validação
+Mantém o canon do projeto:
 
-| Item | Status |
-|------|--------|
-| Topologia detalhada de serviços | Pendente |
-| Fluxo de dados completo | Pendente |
+- `README.md`
+- `docs/`
+- `Dev_Tracking*.md`
+- `tests/bugs_log.md`
+- `Cindy_Contract.md`
+- `rules/`
+- `KB/hermes/`
+
+### 2. KB canônica da Cindy para Hermes
+
+Local: `KB/hermes/`
+
+Função:
+
+- definir identidade da Cindy
+- registrar preferências estáveis do operador
+- preservar memória operacional persistente
+- orientar a sincronização do runtime vivo do Hermes
+
+### 3. Runtime vivo do Hermes
+
+Local: `/root/.hermes`
+
+Função:
+
+- hospedar o runtime efetivo da Cindy no Hermes
+- armazenar `SOUL.md`, `USER.md`, `MEMORY.md`, `config.yaml`, `.env`, `state.db`
+- executar o gateway Telegram
+
+### 4. Telegram
+
+É o canal operacional principal quando o gateway está ativo.
+
+Sem gateway ativo, o Telegram não desperta o sistema sozinho; ele apenas volta a funcionar quando o runtime estiver em execução.
+
+## Runtimes relacionados
+
+| Runtime | Papel no ecossistema |
+|---|---|
+| `.cline/` | runtime Cline |
+| `.codex/` | runtime Codex |
+| `.agents/` | skills canônicas e base compartilhada |
+
+## Portfólio principal da Cindy
+
+Além deste repositório-base, `Replicar.md` registra os **projetos principais da Cindy** que deverão receber replicação controlada de artefatos, skills, docs e regras.
+
+O principal repositório de trabalho atualmente é:
+
+- `C:\01 - Sentivis\Sentivis SIM`
+
+## Fluxo principal atual
+
+1. ajustar KB canônica no repositório-base
+2. sincronizar/reativar o runtime vivo do Hermes
+3. subir ou reiniciar o gateway Telegram
+4. operar a Cindy via Telegram ou CLI
+5. registrar fatos, decisões e pendências na documentação e tracking
+6. planejar replicação para outros projetos antes de qualquer alteração externa
+
+## Fronteiras atuais
+
+### Dentro do escopo atual
+
+- Cindy Agent como repositório-base
+- Hermes + Telegram funcionando no ambiente local
+- documentação canônica e tracking da sprint S1
+- mapa de replicação em `Replicar.md`
+
+### Fora do escopo atual
+
+- replicação automática para todos os projetos listados
+- fechamento da sprint S1
+- automação completa de deploy/serviço do gateway
 
 ## Referência
 
-Consulte [DEVELOPMENT.md](DEVELOPMENT.md) para detalhes de implementação.
+Consulte `docs/DEVELOPMENT.md` para o fluxo de evolução controlada.

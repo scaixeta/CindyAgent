@@ -1,48 +1,56 @@
-# bugs_log.md — Log de Bugs e Issues
-
-## Visão Geral
-
-Este log registra bugs, issues e decisões de desenvolvimento.
-
----
+# bugs_log.md — Log de Bugs, Testes e Evidências
 
 ## Sprint S1
 
-### ST-S1-01 — Configuração de workspace
+### BUG-S1-01 — Warnings no WSL ao ler `.scr/.env` com `CRLF`
 
-**Data:** 2026-04-09  
-**Severidade:** Informational  
-**Descrição:** Acesso ao workspace `C:\cindyagent` via WSL2 configurado com sucesso.
+- **Data:** 2026-04-09
+- **Severidade:** Baixa
+- **Evidência:** warnings do tipo `$'\r': command not found` durante ativação do runtime Hermes
+- **Impacto:** ruído operacional no bootstrap da Cindy; sem impedir ativação
+- **Correção:** normalização do `.scr/.env` local para `LF`
+- **Status:** Corrigido
 
-**Resolução:** N/A — configuração inicial
+### TEST-S1-01 — Pairing Telegram aprovado
+
+- **Data:** 2026-04-09
+- **Escopo:** validar autorização do usuário no Telegram para uso do bot Hermes
+- **Resultado:** pairing aprovado com sucesso; usuário reconhecido no próximo contato
+- **Status:** Passou
+
+### TEST-S1-02 — Gateway Hermes em execução manual
+
+- **Data:** 2026-04-09
+- **Escopo:** subir gateway Hermes e verificar operação fora de service manager
+- **Resultado:** gateway em execução manual com PID ativo e status positivo
+- **Status:** Passou
+
+### TEST-S1-03 — Ativação da Cindy no runtime Hermes
+
+- **Data:** 2026-04-09
+- **Escopo:** enviar prompt de ativação usando `SOUL.md`, `USER.md` e `MEMORY.md` do runtime vivo
+- **Resultado:** Cindy ativada com resposta válida e `session_id` gerado
+- **Status:** Passou
+
+### TEST-S1-04 — Proteção de `.scr/.env` no Git
+
+- **Data:** 2026-04-09
+- **Escopo:** validar remoção do segredo do histórico/versionamento e proteção por `.gitignore`
+- **Resultado:** `.scr/.env` removido do histórico enviado ao remote e mantido apenas localmente
+- **Status:** Passou
 
 ---
 
-## Decisões de Desenvolvimento
+## Issues abertos
 
-### D-S1-01 — Stack Hermes + Telegram
-
-**Data:** 2026-04-09  
-**Descrição:** Definido que o projeto Cindy Agent utiliza Hermes como framework de IA e Telegram como canal de comunicação.
-
----
-
-## Issues Abertos
-
-| ID | Descrição | Severidade | Data |
-|----|-----------|------------|------|
-| — | — | — | — |
-
-## Histórico de Correções
-
-| ID | Bug | Correção | Data |
-|----|-----|----------|------|
-| — | — | — | — |
+| ID | Descrição | Severidade | Status |
+|---|---|---|---|
+| ISSUE-S1-01 | Encoding do terminal Windows ainda pode exibir caracteres quebrados na saída do Hermes | Baixa | Aberto |
 
 ---
 
 ## Notas
 
-- Workspace identificado como **baseline de geração** (sem artefatos materiais no início da sessão)
-- Templates/ não existia — gerados a partir de estrutura canônica DOC2.5
-- Sprint S1 criada para rastrear configuração inicial
+- A sprint S1 permanece aberta
+- `Replicar.md` passa a ser tratado como mapa dos projetos principais da Cindy
+- A replicação entre projetos ainda está em fase de planejamento e não foi executada neste ciclo

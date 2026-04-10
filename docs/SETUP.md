@@ -2,83 +2,98 @@
 
 ## Visão Geral
 
-Cindy Agent utiliza o framework Hermes como motor de IA e Telegram como canal de comunicação primário.
+O projeto opera hoje sobre **Windows + WSL2 + Ubuntu + Hermes**, com Telegram como canal operacional principal quando o gateway está ativo.
 
-## Pré-requisitos
+## Ambiente atual confirmado
 
-| Componente | Requisito |
-|------------|-----------|
-| Sistema Operacional | Windows com WSL2 (Linux) |
-| Hermes CLI | Versão mais recente |
-| Telegram Bot | Bot token válido |
-| WSL | Ubuntu/Debian |
+| Item | Estado atual |
+|---|---|
+| Sistema operacional host | Windows 11 |
+| Subsistema Linux | WSL2 |
+| Distro principal | `Ubuntu` |
+| Workspace Windows | `C:\CindyAgent` |
+| Workspace em WSL | `/mnt/c/CindyAgent` |
+| Runtime Hermes vivo | `/root/.hermes` |
+| Executável principal do Hermes | `/root/.hermes/hermes-agent/venv/bin/hermes` |
 
-## Instalação do Hermes
+## Pré-requisitos operacionais
 
-### Via npm
+- Windows com WSL2 funcional
+- distro Ubuntu instalada
+- Hermes instalado dentro do WSL
+- credenciais do Telegram já configuradas no runtime Hermes
+- `.scr/.env` preservado localmente e **fora do versionamento**
+
+## Estrutura relevante do runtime Hermes
+
+```text
+/root/.hermes/
+├── SOUL.md
+├── memories/
+│   ├── USER.md
+│   └── MEMORY.md
+├── config.yaml
+├── .env
+└── hermes-agent/
+    └── venv/bin/hermes
+```
+
+## KB canônica da Cindy neste repositório
+
+```text
+KB/hermes/
+├── README.md
+├── SOUL.md
+├── USER.md
+└── MEMORY.md
+```
+
+Essa KB é a origem canônica para a persona da Cindy no Hermes. O runtime vivo em `/root/.hermes` deve permanecer coerente com esse conteúdo.
+
+## Inicialização prática
+
+### Subida recomendada no Windows
 
 ```powershell
-npm install -g @hermes/ai
+.\start_hermes_cindy_telegram.bat
 ```
 
-### Verificação
+Esse launcher:
+
+1. reinicia o gateway do Hermes
+2. sobe o gateway em janela separada
+3. reativa a persona Cindy no runtime
+4. mostra o status do gateway
+
+### Reativação isolada da Cindy
 
 ```powershell
-hermes --version
+python KB\hermes\activate_cindy_runtime.py
 ```
 
-## Configuração do Telegram
-
-### 1. Criar um Bot Telegram
-
-1. Abra o Telegram e converse com **@BotFather**
-2. Envie `/newbot`
-3. Siga as instruções e copie o **bot token**
-
-### 2. Configurar credenciais
-
-O Hermes utiliza variáveis de ambiente para credenciais:
+## Validação mínima do ambiente
 
 ```powershell
-# No arquivo .env ou via variáveis de ambiente
-TELEGRAM_BOT_TOKEN=seu_token_aqui
+wsl -d Ubuntu --user root -- /root/.hermes/hermes-agent/venv/bin/hermes status
+wsl -d Ubuntu --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway status
+python KB\hermes\activate_cindy_runtime.py
 ```
 
-### 3. Conectar ao Hermes
+## Regras importantes de setup
 
-```powershell
-hermes connect telegram --token $env:TELEGRAM_BOT_TOKEN
-```
+- `.scr/.env` é segredo local e não deve ser versionado
+- o runtime atual do Hermes está vinculado ao usuário `root` no WSL
+- Telegram é canal principal **somente** quando o gateway está ativo
+- `acorde` deve ser interpretado como retomada lógica, não wake da máquina
 
-## Workspace Cindy Agent
-
-O workspace está em `C:\cindyagent` (acessível via WSL em `/mnt/c/cindyagent`).
-
-### Estrutura de configuração
-
-```
-cindyagent/
-├── .cline/             # Configurações do runtime Cline
-├── .clinerules/        # Regras e workflows DOC2.5
-├── .agents/            # Skills e agentes
-└── rules/              # Regras operacionais
-```
-
-## Validação
-
-Após configurar, valide com:
-
-```powershell
-hermes status
-```
-
-## Pendente de Validação
+## Pendências conhecidas
 
 | Item | Status |
-|------|--------|
-| Credenciais Telegram confirmadas | Pendente |
-| Endpoint do bot respondendo | Pendente |
+|---|---|
+| Gateway como serviço persistente | Opcional / ainda não implantado |
+| Padronização de encoding do terminal Windows | Pendente |
+| Replicação para outros projetos da Cindy | Planejada |
 
 ## Referência
 
-Consulte [OPERATIONS.md](OPERATIONS.md) para comandos operacionais.
+Consulte `docs/OPERATIONS.md` para os comandos operacionais correntes.
