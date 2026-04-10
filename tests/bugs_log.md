@@ -47,6 +47,13 @@
 - **Commit:** a8002d3
 - **Status:** Passou
 
+### TEST-S1-06 — Integração Codex CLI
+
+- **Data:** 2026-04-10
+- **Escopo:** autenticar Codex via `codex-cli auth login`, testar resposta do modelo com cálculo simples, configurar gpt-5.2-codex como modelo padrão para planeamento e arquitectura
+- **Resultado:** autenticação via OAuth web (subscription ChatGPT) confirmada; teste com `2+2` devolveu `4` com sucesso; modelo gpt-5.2-codex (reasoning effort: high, context: 400K) configurado como padrão para tarefas de planeamento e arquitectura
+- **Status:** Passou
+
 ---
 
 ## Issues abertos

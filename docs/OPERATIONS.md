@@ -42,6 +42,7 @@ wsl -d Ubuntu --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway 
 - **`acorde`:** retomada lógica da sessão/contexto
 - **Não significa:** ligar máquina, acordar WSL ou iniciar Hermes do zero automaticamente
 - **Commit/push:** somente com autorização explícita do PO
+- **Selecção de reasoning engine:** tarefas simples/rápidas usam OpenCode (MiniMax M2.7); tarefas complexas de planeamento/arquitectura usam Codex (OpenAI gpt-5.2-codex, Reasoning Effort: High, Context 400K)
 - **OpenCode:** tool de delegação — usado para raciocínio profundo em código, não substitui o Hermes
 
 ## Procedimento padrão de subida
@@ -57,7 +58,7 @@ wsl -d Ubuntu --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway 
 |---|---|
 | Status geral do Hermes | `hermes status` |
 | Status do gateway | `hermes gateway status` |
-| Teste rápido do OpenCode | `.\run_opencode.bat "echo hello"` |
+| Teste rápido do OpenCode | `cd /d C:\cindyagent && opencode run --model minimax/MiniMax-M2.7 "echo hello"` |
 
 ## Troubleshooting actual
 

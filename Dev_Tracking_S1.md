@@ -33,6 +33,7 @@ Consolidação do ambiente Hermes + Telegram, materialização da documentação
 | Done | ST-S1-14 — Criar ativação reutilizável e launcher Windows para Hermes + Cindy |
 | Done | ST-S1-15 — Atualizar docs canônicos conforme estado real do runtime |
 | Done | ST-S1-17 — Criar API de testes FastAPI e validar com testes automatizados (TEST-S1-05) |
+| Done | ST-S1-18 — Integrar Codex CLI como reasoning engine secundário para planeamento e arquitectura |
 | Pending-SX | ST-S1-16 — Planejar replicação controlada para os projetos listados em `Replicar.md` |
 
 ## Decisões
@@ -45,6 +46,7 @@ Consolidação do ambiente Hermes + Telegram, materialização da documentação
 | D-S1-04 | `Replicar.md` deve ser lido como mapa dos projetos principais da Cindy | 2026-04-09 |
 | D-S1-05 | O repositório principal de trabalho no momento é `C:\\01 - Sentivis\\Sentivis SIM` | 2026-04-09 |
 | D-S1-06 | OpenCode CLI integrado com MINIMAX_API_KEY do .scr/.env via wrapper run_opencode.bat; modelo usado: minimax/MiniMax-M2.7 | 2026-04-10 |
+| D-S1-07 | Codex CLI integrado como reasoning engine secundário para planeamento e arquitectura; modelo: gpt-5.2-codex (reasoning effort: high, context: 400K); autenticação via OAuth web (subscription ChatGPT); selecção por complexidade | 2026-04-10 |
 
 ## Timestamp UTC
 
@@ -66,6 +68,7 @@ Consolidação do ambiente Hermes + Telegram, materialização da documentação
 | ST-S1-14 | 2026-04-09T23:05:00-ST | 2026-04-09T23:10:00-FN | Done |
 | ST-S1-15 | 2026-04-09T23:10:00-ST | 2026-04-09T23:22:00-FN | Done |
 | ST-S1-17 | 2026-04-10T00:25:00-ST | 2026-04-10T00:35:00-FN | Done |
+| ST-S1-18 | 2026-04-10T01:15:00-ST | 2026-04-10T01:30:00-FN | Done |
 | D-S1-02 | 2026-04-09T22:46:00-ST | 2026-04-09T22:46:00-FN | Logged |
 | D-S1-03 | 2026-04-09T22:34:00-ST | 2026-04-09T22:39:00-FN | Logged |
 | D-S1-04 | 2026-04-09T23:21:00-ST | 2026-04-09T23:22:00-FN | Logged |

@@ -54,14 +54,23 @@ Mantém o cânon do projeto:
 
 ### 2. OpenCode CLI
 
-Ferramenta de delegação para tarefas que exigem raciocínio profundo sobre código.
+Ferramenta de delegação para tarefas simples/rapidas que exigem raciocínio profundo sobre código.
 
-- Wrapper: `C:\cindyagent\run_opencode.bat`
+- Wrapper: `run_opencode.bat` (ou via `opencode run`)
 - Modelo: `minimax/MiniMax-M2.7`
 - Autenticação: `MINIMAX_API_KEY` do Coding Plan em `.scr/.env`
 - Invocado pela Cindy via `mcp_delegate_task` com `acp_command=opencode`
 
-### 3. KB canônica da Cindy para Hermes
+### 3. Codex CLI
+
+Ferramenta de delegação para tarefas complexas (planeamento, arquitectura, código de grande escopo, raciocínio profundo).
+
+- Comando: `codex exec "prompt" -s read-only`
+- Modelo: `gpt-5.2-codex` (OpenAI, reasoning effort: high, context: 400K)
+- Autenticação: `codex auth login` via browser OAuth (subscription ChatGPT)
+- Selecção: tarefas que exigem planeamento profundo — OpenCode para o resto
+
+### 4. KB canônica da Cindy para Hermes
 
 Local: `KB/hermes/`
 
@@ -71,7 +80,7 @@ Função:
 - preservar memória operacional persistente
 - orientar a sincronização do runtime vivo do Hermes
 
-### 4. Runtime vivo do Hermes
+### 5. Runtime vivo do Hermes
 
 Local: `/root/.hermes`
 
