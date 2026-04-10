@@ -1,0 +1,83 @@
+{
+  "sucesso": true,
+  "testes": [
+    {
+      "nome": "registrar_3_itens",
+      "status": "pass",
+      "ids_registrados": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "nome": "get_registros",
+      "status": "pass",
+      "quantidade": 3
+    },
+    {
+      "nome": "delete_encerrar",
+      "status": "pass",
+      "total_relatorio": 3
+    }
+  ],
+  "dados": {
+    "itens_enviados": [
+      {
+        "nome": "item_teste_1",
+        "valor": 100
+      },
+      {
+        "nome": "item_teste_2",
+        "valor": "texto qualquer"
+      },
+      {
+        "nome": "item_teste_3",
+        "valor": {
+          "chave": "objeto"
+        }
+      }
+    ],
+    "registros_retornados": [
+      {
+        "id": 1,
+        "nome": "item_teste_1",
+        "valor": 100
+      },
+      {
+        "id": 2,
+        "nome": "item_teste_2",
+        "valor": "texto qualquer"
+      },
+      {
+        "id": 3,
+        "nome": "item_teste_3",
+        "valor": {
+          "chave": "objeto"
+        }
+      }
+    ],
+    "relatorio_final": {
+      "total_registros": 3,
+      "registros": [
+        {
+          "id": 1,
+          "nome": "item_teste_1",
+          "valor": 100
+        },
+        {
+          "id": 2,
+          "nome": "item_teste_2",
+          "valor": "texto qualquer"
+        },
+        {
+          "id": 3,
+          "nome": "item_teste_3",
+          "valor": {
+            "chave": "objeto"
+          }
+        }
+      ]
+    }
+  }
+}
