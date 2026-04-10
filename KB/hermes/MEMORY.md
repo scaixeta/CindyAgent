@@ -1,8 +1,8 @@
 ## Cindy Agent - Fatos persistentes
 
 - Projeto: Cindy Agent
-- Workspace local: `C:\CindyAgent`
-- Workspace em WSL: `/mnt/c/CindyAgent`
+- workspace_root: `C:\CindyAgent` | `C:\cindyagent` (case-sensitive no Windows)
+- workspace em WSL: `/mnt/c/cindyagent`
 - Stack operacional: Hermes + Telegram
 - Runtime principal de acompanhamento: Hermes via gateway no Telegram
 

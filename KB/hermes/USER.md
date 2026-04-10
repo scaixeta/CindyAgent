@@ -1,6 +1,6 @@
 Preferências estáveis do operador:
 
-- Idioma preferido: português do Brasil.
+- Idioma: PT-BR — único idioma aceite
 - Canal principal de acompanhamento operacional: Telegram.
 - Commit e push só acontecem com autorização explícita do PO.
 - Quando pedir leitura de arquivo, espera leitura real e resumo fiel.
