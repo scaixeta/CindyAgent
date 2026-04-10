@@ -2,17 +2,18 @@
 
 ## Visão Geral
 
-O desenvolvimento atual do Cindy Agent permanece dentro da **Sprint S1**, ainda aberta, com foco em consolidar o runtime Hermes, a persona Cindy, a documentação DOC2.5 e o planejamento da replicação entre os projetos principais da Cindy.
+O desenvolvimento atual do Cindy Agent permanece dentro da **Sprint S1**, ainda aberta, com foco em consolidar o runtime Hermes, a persona Cindy, a documentação DOC2.5, a integração do OpenCode CLI e o planejamento da replicação entre os projetos principais da Cindy.
 
 ## Estado atual da sprint
 
 - **Sprint ativa:** `S1`
 - **Status:** aberta
-- **Escopo corrente:** Hermes + Telegram + KB/hermes + docs canônicos + tracking + planejamento de replicação
+- **Estórias:** 15 Done / 1 Pending (ST-S1-16: planejar replicação)
+- **Escopo corrente:** Hermes + Telegram + KB/hermes + docs canônicos + OpenCode + tracking
 
 ## Fluxo DOC2.5 aplicado neste projeto
 
-```text
+```
 1. entender o pedido
 2. ler contexto mínimo necessário
 3. separar fato, inferência e pendência
@@ -36,6 +37,7 @@ O desenvolvimento atual do Cindy Agent permanece dentro da **Sprint S1**, ainda 
 ### Dentro do escopo atual
 
 - manter o repositório-base Cindy Agent coerente com o estado real do Hermes
+- OpenCode CLI como tool de delegação para raciocínio profundo
 - documentar KB/hermes e runtime vivo do Hermes
 - documentar operação via Telegram e gateway
 - registrar os projetos principais da Cindy via `Replicar.md`
@@ -45,7 +47,7 @@ O desenvolvimento atual do Cindy Agent permanece dentro da **Sprint S1**, ainda 
 
 - alterar em lote os repositórios listados em `Replicar.md`
 - fechar a sprint S1
-- automatizar replicação entre todos os projetos sem tracking individual
+- automação completa de deploy/serviço do gateway
 
 ## Portfólio principal da Cindy
 
@@ -71,7 +73,7 @@ Itens candidatos a replicação controlada:
 - Prompt / persona Cindy
 - `Cindy_Contract.md`
 - `rules/`
-- workflows e artefatos GSD quando aplicáveis
+- workflows DOC2.5
 
 ## Política Git
 

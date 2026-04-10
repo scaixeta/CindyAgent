@@ -7,15 +7,25 @@ Repositório-base local da Cindy no workspace `C:\CindyAgent`, usado para manter
 - **Sprint ativa:** `S1` — permanece aberta
 - **Runtime principal:** Hermes em WSL (`Ubuntu`), com runtime vivo em `/root/.hermes`
 - **Canal operacional principal:** Telegram, via Hermes Gateway
+- **Tool de raciocínio:** OpenCode CLI com MiniMax M2.7 (Coding Plan)
 - **KB canônica da Cindy para Hermes:** `KB/hermes/`
 - **Sincronização viva do runtime:** `/root/.hermes/SOUL.md`, `/root/.hermes/memories/USER.md`, `/root/.hermes/memories/MEMORY.md`
 - **Branch principal deste repositório:** `main`
 - **Segredo local protegido:** `.scr/.env` permanece fora de versionamento
 
+## Sprint S1 — Estado
+
+| Estórias | Total | Done | Pending |
+|---|---|---|---|
+| Backlog | 16 | 15 | 1 |
+
+**Pending:** ST-S1-16 — Planejar replicação controlada para os projetos listados em `Replicar.md`
+
 ## Escopo atual da S1
 
 - estabilizar o runtime Hermes + Telegram
 - consolidar a persona Cindy em KB canônica e runtime vivo
+- integrar OpenCode CLI como tool de raciocínio profundo
 - manter a documentação DOC2.5 aderente ao estado real do projeto
 - registrar o portfólio principal da Cindy para replicação futura
 
@@ -46,11 +56,13 @@ Alvos registrados:
 .\start_hermes_cindy_telegram.bat
 ```
 
-### Reativar apenas a persona Cindy no runtime atual
+### OpenCode — usar reasoning profundo
 
-```powershell
-python KB\hermes\activate_cindy_runtime.py
+```batch
+.\run_opencode.bat "prompt aqui"
 ```
+
+Modelo padrão: `minimax/MiniMax-M2.7`
 
 ## Estrutura canônica
 
@@ -81,7 +93,7 @@ python KB\hermes\activate_cindy_runtime.py
 
 ## Cindy — Orquestradora
 
-A Cindy é a agente principal do ecossistema. Neste repositório, ela opera como camada de continuidade operacional entre documentação, runtime Hermes, regras locais, rastreabilidade de sprint e futuros processos de replicação entre projetos.
+A Cindy é o agente principal do projeto. Em cada run, ela identifica o orchestrator ativo (Cline/Codex/Antigravity), a superfície de execução (VSCode/CLI) e o workspace root; em seguida, descobre e seleciona as skills/workflows disponíveis no contexto atual, respeitando os gates DOC2.5 (plano aprovado antes de execução; commit/push apenas sob ordem explícita do PO).
 
 <p align="center">
   <img src=".brand/Cindy.jpg" alt="Cindy — Orquestradora" width="220" />

@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-O projeto opera hoje sobre **Windows + WSL2 + Ubuntu + Hermes**, com Telegram como canal operacional principal quando o gateway está ativo.
+O projeto opera sobre **Windows + WSL2 + Ubuntu + Hermes**, com Telegram como canal operacional principal e OpenCode CLI como tool de raciocínio profundo.
 
 ## Ambiente atual confirmado
 
@@ -10,11 +10,12 @@ O projeto opera hoje sobre **Windows + WSL2 + Ubuntu + Hermes**, com Telegram co
 |---|---|
 | Sistema operacional host | Windows 11 |
 | Subsistema Linux | WSL2 |
-| Distro principal | `Ubuntu` |
+| Distro principal | Ubuntu |
 | Workspace Windows | `C:\CindyAgent` |
 | Workspace em WSL | `/mnt/c/CindyAgent` |
 | Runtime Hermes vivo | `/root/.hermes` |
-| Executável principal do Hermes | `/root/.hermes/hermes-agent/venv/bin/hermes` |
+| OpenCode CLI | `run_opencode.bat` (wrapper) |
+| Modelo OpenCode | `minimax/MiniMax-M2.7` |
 
 ## Pré-requisitos operacionais
 
@@ -22,11 +23,12 @@ O projeto opera hoje sobre **Windows + WSL2 + Ubuntu + Hermes**, com Telegram co
 - distro Ubuntu instalada
 - Hermes instalado dentro do WSL
 - credenciais do Telegram já configuradas no runtime Hermes
-- `.scr/.env` preservado localmente e **fora do versionamento**
+- MINIMAX_API_KEY do Coding Plan em `.scr/.env` (nunca versionar)
+- OpenCode CLI acessível via `run_opencode.bat`
 
 ## Estrutura relevante do runtime Hermes
 
-```text
+```
 /root/.hermes/
 ├── SOUL.md
 ├── memories/
@@ -40,7 +42,7 @@ O projeto opera hoje sobre **Windows + WSL2 + Ubuntu + Hermes**, com Telegram co
 
 ## KB canônica da Cindy neste repositório
 
-```text
+```
 KB/hermes/
 ├── README.md
 ├── SOUL.md
@@ -52,31 +54,31 @@ Essa KB é a origem canônica para a persona da Cindy no Hermes. O runtime vivo 
 
 ## Inicialização prática
 
-### Subida recomendada no Windows
+### Subir Hermes + Cindy no Telegram
 
 ```powershell
 .\start_hermes_cindy_telegram.bat
 ```
 
 Esse launcher:
-
 1. reinicia o gateway do Hermes
 2. sobe o gateway em janela separada
 3. reativa a persona Cindy no runtime
 4. mostra o status do gateway
 
-### Reativação isolada da Cindy
+### Usar OpenCode para raciocínio profundo
 
-```powershell
-python KB\hermes\activate_cindy_runtime.py
+```batch
+.\run_opencode.bat "prompt aqui"
 ```
+
+O wrapper lê `MINIMAX_API_KEY` do `.scr/.env` e passa ao OpenCode via PowerShell (resolve problema de scoping do `set` no cmd.exe).
 
 ## Validação mínima do ambiente
 
 ```powershell
 wsl -d Ubuntu --user root -- /root/.hermes/hermes-agent/venv/bin/hermes status
 wsl -d Ubuntu --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway status
-python KB\hermes\activate_cindy_runtime.py
 ```
 
 ## Regras importantes de setup
@@ -85,14 +87,15 @@ python KB\hermes\activate_cindy_runtime.py
 - o runtime atual do Hermes está vinculado ao usuário `root` no WSL
 - Telegram é canal principal **somente** quando o gateway está ativo
 - `acorde` deve ser interpretado como retomada lógica, não wake da máquina
+- OpenCode é tool de delegação — não substitui o Hermes
 
 ## Pendências conhecidas
 
 | Item | Status |
 |---|---|
 | Gateway como serviço persistente | Opcional / ainda não implantado |
-| Padronização de encoding do terminal Windows | Pendente |
-| Replicação para outros projetos da Cindy | Planejada |
+| Replicação para outros projetos da Cindy | Planejada (ST-S1-16) |
+| GSD (Get Shit Done) | Não faz parte deste projeto |
 
 ## Referência
 

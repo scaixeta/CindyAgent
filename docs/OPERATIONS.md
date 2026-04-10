@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-Este documento descreve a operação atual do Cindy Agent com Hermes em WSL e Telegram como canal principal.
+Este documento descreve a operação atual do Cindy Agent com Hermes em WSL, Telegram como canal principal e OpenCode CLI como tool de delegação.
 
 ## Estado operacional atual
 
@@ -11,18 +11,21 @@ Este documento descreve a operação atual do Cindy Agent com Hermes em WSL e Te
 | Runtime Hermes | instalado e funcional |
 | Local do runtime | `/root/.hermes` |
 | Executável | `/root/.hermes/hermes-agent/venv/bin/hermes` |
-| Telegram | configurado |
-| Pairing Telegram | aprovado |
-| Gateway | funcional, atualmente executado manualmente |
+| Telegram | configurado e pareado |
+| Gateway | funcional, actualmente executado manualmente |
+| OpenCode | integrado via wrapper |
 | Serviço persistente | ainda não instalado como service |
 
 ## Comandos principais
 
-### No Windows (modo prático)
+### No Windows
 
 ```powershell
+# Subir Hermes + Cindy no Telegram
 .\start_hermes_cindy_telegram.bat
-python KB\hermes\activate_cindy_runtime.py
+
+# Usar OpenCode (raciocínio profundo)
+.\run_opencode.bat "pergunta aqui"
 ```
 
 ### No WSL / Hermes
@@ -39,7 +42,7 @@ wsl -d Ubuntu --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway 
 - **`acorde`:** retomada lógica da sessão/contexto
 - **Não significa:** ligar máquina, acordar WSL ou iniciar Hermes do zero automaticamente
 - **Commit/push:** somente com autorização explícita do PO
-- **Segredos:** `.scr/.env` e credenciais nunca devem ser expostos
+- **OpenCode:** tool de delegação — usado para raciocínio profundo em código, não substitui o Hermes
 
 ## Procedimento padrão de subida
 
@@ -54,14 +57,14 @@ wsl -d Ubuntu --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway 
 |---|---|
 | Status geral do Hermes | `hermes status` |
 | Status do gateway | `hermes gateway status` |
-| Reativação da Cindy | `python KB\hermes\activate_cindy_runtime.py` |
+| Teste rápido do OpenCode | `.\run_opencode.bat "echo hello"` |
 
-## Troubleshooting atual
+## Troubleshooting actual
 
 | Problema | Causa provável | Correção mínima |
 |---|---|---|
 | Telegram não responde | gateway parado | subir/reiniciar o gateway |
-| Cindy sem contexto esperado | runtime não reativado | executar `python KB\hermes\activate_cindy_runtime.py` |
+| OpenCode retorna "invalid api key" | MINIMAX_API_KEY expirada ou inválida | verificar chave em `.scr/.env` |
 | Warnings de `.env` no WSL | arquivo com `CRLF` | normalizar para `LF` |
 | Caracteres quebrados no terminal Windows | encoding do console | usar terminal UTF-8 / PowerShell com code page adequada |
 
