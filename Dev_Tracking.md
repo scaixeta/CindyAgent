@@ -23,7 +23,7 @@
 - `2026-04-09` — `Replicar.md` reconhecido como mapa dos projetos principais da Cindy
 - `2026-04-10` — OpenCode CLI integrado com MiniMax M2.7 via wrapper `run_opencode.bat`; TEST-S1-05 (API FastAPI) passou
 - `2026-04-10` — Análise aprofundada dos 8 repositórios; 5 repositórios pessoais removidos de `Replicar.md`; `KB/REPOSITORIES_STATUS.md` criado
-- `2026-04-11` — ST-S1-16 executada: reconciliação do backlog S1 (17 itens, todos done), registro de D-S1-08, validação cruzada entre `Dev_Tracking_S1.md`, `bugs_log.md`, `Dev_Tracking.md` e `README.md`
+- `2026-04-11` — ST-S1-16: escopo Embrapa/café movido para Sentivis SIM (S5) — não pertence ao CindyAgent; backlog corrigido para 16 itens
 
 
 ## Estrutura de Tracking

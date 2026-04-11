@@ -17,9 +17,9 @@ Repositorio-base local da Cindy no workspace `C:\CindyAgent`, usado para manter 
 
 | Estorias | Total | Done | Pending |
 |---|---|---|---|
-| Backlog | 17 | 17 | 0 |
+| Backlog | 16 | 16 | 0 |
 
-**ST-S1-16 executada** em 2026-04-11 — reconciliação documental e correção do backlog S1 (17 itens, todos done). Sprint permanece aberta aguardando ordem de encerramento do PO.
+Sprint permanece aberta aguardando ordem de encerramento do PO.
 
 ## Escopo atual da S1
 

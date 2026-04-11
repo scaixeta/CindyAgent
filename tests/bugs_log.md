@@ -69,4 +69,4 @@
 - A sprint S1 permanece aberta
 - `Replicar.md` passa a ser tratado como mapa dos projetos principais da Cindy
 - A replicação entre projetos ainda está em fase de planejamento e não foi executada neste ciclo
-- `2026-04-11` — Sessão de reconciliação DOC2.5: ST-S1-16 executada. Backlog corrigido de 16 para 17 itens. Decisão D-S1-08 registrada. Validação cruzada executada entre `Dev_Tracking_S1.md`, `bugs_log.md`, `Dev_Tracking.md` e `README.md`. Bugs_log e Dev_Tracking reconciliados — não há divergências entre as evidências registradas e o tracking da sprint.
+- `2026-04-11` — ST-S1-16: escopo Embrapa/café movido para Sentivis SIM (S5) — não pertence ao CindyAgent. Backlog do CindyAgent corrigido para 16 itens (ST-S1-16 renarrada como desalocação de escopo).

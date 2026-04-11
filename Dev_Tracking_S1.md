@@ -32,7 +32,7 @@ Consolidação do ambiente Hermes + Telegram, materialização da documentação
 | Done | ST-S1-13 — Materializar `KB/hermes/` e sincronizar a Cindy no runtime Hermes |
 | Done | ST-S1-14 — Criar ativação reutilizável e launcher Windows para Hermes + Cindy |
 | Done | ST-S1-15 — Atualizar docs canônicos conforme estado real do runtime |
-| Done | ST-S1-16 — Atualizar documentação Sprint S1 — corrigir backlog (17 itens), registrar decisões D-S1-06 e D-S1-07, reconciliar tracking com bugs_log |
+| Done | ST-S1-16 — Escopo Embrapa/café movido para Sentivis SIM (S5) — não pertence ao CindyAgent |
 | Done | ST-S1-17 — Criar API de testes FastAPI e validar com testes automatizados (TEST-S1-05) |
 | Done | ST-S1-18 — Integrar Codex CLI como engine secundária de raciocínio para planejamento e arquitetura |
 
@@ -47,7 +47,7 @@ Consolidação do ambiente Hermes + Telegram, materialização da documentação
 | D-S1-05 | O repositório principal de trabalho no momento é `C:\\01 - Sentivis\\Sentivis SIM` | 2026-04-09 |
 | D-S1-06 | OpenCode CLI integrado com `MINIMAX_API_KEY` de `.scr/.env` via wrapper `run_opencode.bat`; modelo usado: `minimax/MiniMax-M2.7` | 2026-04-10 |
 | D-S1-07 | Codex CLI integrado como engine secundária de raciocínio para planejamento e arquitetura; modelo: `gpt-5.2-codex` (`reasoning effort: high`, contexto: 400K); autenticação via OAuth web (assinatura ChatGPT); seleção por complexidade | 2026-04-10 |
-| D-S1-08 | ST-S1-16 executada: correção do backlog (17 itens, todos done), registro de D-S1-06 e D-S1-07 em tracking, reconciliação entre `Dev_Tracking_S1.md` e `bugs_log.md` | 2026-04-11 |
+| D-S1-08 | ST-S1-16: escopo Embrapa/café movido para o Sentivis SIM — não pertence ao CindyAgent | 2026-04-11 |
 
 ## Timestamp UTC
 
@@ -71,15 +71,15 @@ Consolidação do ambiente Hermes + Telegram, materialização da documentação
 | ST-S1-16 | 2026-04-11T00:00:00-ST | 2026-04-11T00:16:00-FN | Done |
 | ST-S1-17 | 2026-04-10T00:25:00-ST | 2026-04-10T00:35:00-FN | Done |
 | ST-S1-18 | 2026-04-10T01:15:00-ST | 2026-04-10T01:30:00-FN | Done |
-| D-S1-08 | 2026-04-11T00:16:00-ST | 2026-04-11T00:16:00-FN | Logged |
 | D-S1-03 | 2026-04-09T22:34:00-ST | 2026-04-09T22:39:00-FN | Logged |
 | D-S1-04 | 2026-04-09T23:21:00-ST | 2026-04-09T23:22:00-FN | Logged |
 | D-S1-05 | 2026-04-09T23:21:00-ST | 2026-04-09T23:22:00-FN | Logged |
+| D-S1-08 | 2026-04-11T00:20:00-ST | 2026-04-11T00:20:00-FN | Logged |
 
 ## Gates
 
 - [x] Gate de inicializacao
 - [x] Planejamento proporcional às mudanças realizadas
 - [x] Proteção de segredos locais
-- [x] Reconciliação documental — todos os 17 itens do backlog verificados e rastreados
+- [x] ST-S1-16: escopo Embrapa/café identificado e movido para Sentivis SIM (S5)
 - [ ] Sprint fechada (somente por ordem do PO)
