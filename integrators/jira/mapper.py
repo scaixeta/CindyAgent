@@ -91,7 +91,7 @@ def map_item_type(doc25_type: str, state: JiraState) -> str:
     # `change_request`), enquanto o issuetype precisa ser um dos tipos
     # realmente disponiveis no projeto STVIA.
     name_map = {
-        "ST": "História",
+        "ST": "Tarefa",
         "BUG": "Tarefa",
         "TEST": "Tarefa",
         "CR": "Tarefa",

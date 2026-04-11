@@ -31,14 +31,14 @@
 
 ## 3. Backlog da Sprint
 
-| Estado | SP | Estória |
+| Status | SP | Estória |
 |---|---:|---|
-| Concluído | 3 | ST-S5-01 - Parser de collection_log.txt (12 registros reais) |
-| Concluído | 5 | ST-S5-02 - Motor de tendência (umidade e temperatura) |
-| Concluído | 3 | ST-S5-03 - Marcadores operativos e output Markdown |
-| Concluído | 5 | ST-S5-04 - Output JSON + entrega Telegram |
-| Concluído | 3 | ST-S5-05 - Camada Redis operacional mínima |
-| Concluído | 3 | ST-S5-06 - Validação de recuperação de estado e janela curta |
+| Done | 3 | ST-S5-01 - Parser de collection_log.txt (12 registros reais) |
+| Done | 5 | ST-S5-02 - Motor de tendência (umidade e temperatura) |
+| Done | 3 | ST-S5-03 - Marcadores operativos e output Markdown |
+| Done | 5 | ST-S5-04 - Output JSON + entrega Telegram |
+| Done | 3 | ST-S5-05 - Camada Redis operacional mínima |
+| Done | 3 | ST-S5-06 - Validação de recuperação de estado e janela curta |
 
 **Total: 25 SP | Concluído: 22 SP | A Fazer: 3 SP (OBJ-S5-07)**
 

@@ -6,7 +6,7 @@
 |------|-----------|
 | **Nome do Projeto** | Sentivis IAOps |
 | **Plataforma IoT** | ThingsBoard Community Edition |
-| **Fase Atual** | Sprint S3 encerrada localmente (2026-04-11) |
+| **Fase Atual** | Sprint S5 em curso (2026-04-10) |
 | **Versão** | 1.0.0-S3 |
 
 ## Escopo do Projeto
@@ -69,6 +69,8 @@ Sentivis SIM/
 | S1 | Estruturar integração Jira Cloud subordinada ao DOC2.5 | Encerrada | `Sprint/Dev_Tracking_S1.md` |
 | S2 | Consolidar a visibilidade executiva da entrega com rastreabilidade entre o SoT local e o Jira | Encerrada (local) | `Sprint/Dev_Tracking_S2.md` |
 | S3 | Retomar a base funcional do projeto com o backlog Mock ThingsBoard | Encerrada (local) | `Sprint/Dev_Tracking_S3.md` |
+| S4 | Coleta live Cirrus + backfill 10 dias + discovery batch telemetry TB CE | Encerrada (local) | `Sprint/Dev_Tracking_S4.md` |
+| S5 | Materializar Sprint S5 no SoT e Jira, manter aberta, preparar evidencias | Em curso | `Dev_Tracking_S5.md` |
 
 ## Camada Jira DOC2.5
 
@@ -148,7 +150,7 @@ Regras operacionais locais:
 
 ## Notas Importantes
 
-- Este projeto esta em **Sprint S3 encerrada** - fase de retomada do backlog base do Mock ThingsBoard apos a consolidacao da camada Jira
+- Este projeto esta em **Sprint S5 em curso** - fase de retomada do backlog base do Mock ThingsBoard apos a consolidacao da camada Jira
 - A integração Jira já possui arquitetura provider-oriented em `integrators/` com compatibilidade preservada em `scripts/`
 - Telemetria é gerada por **mock**, não por hardware real
 - O objetivo é estabelecer a base para futura integração com ESP32/LoRa
