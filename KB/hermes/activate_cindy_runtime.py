@@ -7,7 +7,7 @@ from pathlib import Path
 from textwrap import dedent
 
 
-WSL_DISTRO = "Ubuntu"
+WSL_DISTRO = "Ubuntu-22.04"
 WSL_USER = "root"
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CANONICAL_DIR = REPO_ROOT / "KB" / "hermes"

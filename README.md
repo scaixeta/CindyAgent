@@ -5,7 +5,7 @@ Repositorio-base local da Cindy no workspace `C:\CindyAgent`, usado para manter 
 ## Estado atual
 
 - **Sprint ativa:** `S1` — permanece aberta
-- **Runtime principal:** Hermes em WSL (`Ubuntu`), com runtime vivo em `/root/.hermes`
+- **Runtime principal:** Hermes em WSL (`Ubuntu-22.04`), com runtime vivo em `/root/.hermes`
 - **Canal operacional principal:** Telegram, via Hermes Gateway
 - **Tool de raciocinio:** OpenCode CLI com MiniMax M2.7 (Coding Plan)
 - **KB canonica da Cindy para Hermes:** `KB/hermes/`

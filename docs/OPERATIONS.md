@@ -31,9 +31,9 @@ Este documento descreve a operacao atual do Cindy Agent com Hermes em WSL, Teleg
 ### No WSL / Hermes
 
 ```powershell
-wsl -d Ubuntu --user root -- /root/.hermes/hermes-agent/venv/bin/hermes status
-wsl -d Ubuntu --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway status
-wsl -d Ubuntu --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway run
+wsl -d Ubuntu-22.04 --user root -- /root/.hermes/hermes-agent/venv/bin/hermes status
+wsl -d Ubuntu-22.04 --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway status
+wsl -d Ubuntu-22.04 --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway run
 ```
 
 ## Semantica operacional da Cindy
@@ -79,8 +79,8 @@ Ainda opcional e nao consolidada como padrao deste projeto.
 Comandos disponiveis:
 
 ```powershell
-wsl -d Ubuntu --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway install
-wsl -d Ubuntu --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway uninstall
+wsl -d Ubuntu-22.04 --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway install
+wsl -d Ubuntu-22.04 --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway uninstall
 ```
 
 ## Operações da equipe de agentes

@@ -3,6 +3,9 @@ set -e
 
 echo "=== Hermes Agent Installation Script ==="
 
+GIT_BIN="$(command -v git.exe 2>/dev/null || command -v git)"
+export GIT_TERMINAL_PROMPT=1
+
 echo "[1/5] Creating ~/.hermes/ directory structure..."
 mkdir -p ~/.hermes/{logs,sessions,cron,skills,memories}
 mkdir -p ~/.local/bin
@@ -12,10 +15,10 @@ echo "[2/5] Cloning/Updating hermes-agent repository..."
 if [ -d "$HOME/.hermes/hermes-agent/.git" ]; then
     echo "    Repository exists, pulling latest changes..."
     cd ~/.hermes/hermes-agent
-    git pull
+    "$GIT_BIN" pull
 else
     echo "    Cloning repository to ~/.hermes/hermes-agent..."
-    git clone https://github.com/scaixeta/hermes-agent.git ~/.hermes/hermes-agent
+    "$GIT_BIN" clone https://github.com/scaixeta/hermes-agent.git ~/.hermes/hermes-agent
 fi
 echo "    Done."
 

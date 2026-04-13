@@ -2,7 +2,7 @@
 
 ## Visao Geral
 
-O projeto opera sobre **Windows + WSL2 + Ubuntu + Hermes**, com Telegram como canal operacional principal e OpenCode CLI como tool de raciocinio profundo.
+O projeto opera sobre **Windows + WSL2 + Ubuntu-22.04 + Hermes**, com Telegram como canal operacional principal e OpenCode CLI como tool de raciocinio profundo.
 
 ## Ambiente atual confirmado
 
@@ -10,7 +10,7 @@ O projeto opera sobre **Windows + WSL2 + Ubuntu + Hermes**, com Telegram como ca
 |---|---|
 | Sistema operacional host | Windows 11 |
 | Subsistema Linux | WSL2 |
-| Distro principal | Ubuntu |
+| Distro principal | Ubuntu-22.04 |
 | Workspace Windows | `C:\CindyAgent` |
 | Workspace em WSL | `/mnt/c/CindyAgent` |
 | Runtime Hermes vivo | `/root/.hermes` |
@@ -20,7 +20,7 @@ O projeto opera sobre **Windows + WSL2 + Ubuntu + Hermes**, com Telegram como ca
 ## Pré-requisitos operacionais
 
 - Windows com WSL2 funcional
-- distro Ubuntu instalada
+- distro Ubuntu-22.04 instalada
 - Hermes instalado dentro do WSL
 - credenciais do Telegram já configuradas no runtime Hermes
 - MINIMAX_API_KEY do Coding Plan em `.scr/.env` (nunca versionar)
@@ -90,8 +90,8 @@ O wrapper le `MINIMAX_API_KEY` do `.scr/.env` e passa ao OpenCode via PowerShell
 ## Validacao minima do ambiente
 
 ```powershell
-wsl -d Ubuntu --user root -- /root/.hermes/hermes-agent/venv/bin/hermes status
-wsl -d Ubuntu --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway status
+wsl -d Ubuntu-22.04 --user root -- /root/.hermes/hermes-agent/venv/bin/hermes status
+wsl -d Ubuntu-22.04 --user root -- /root/.hermes/hermes-agent/venv/bin/hermes gateway status
 ```
 
 ## Regras importantes de setup
