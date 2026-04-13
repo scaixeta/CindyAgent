@@ -16,9 +16,11 @@ redis-cli SET acp:agent:hermes:status "active" 2>/dev/null || true
 pip install redis asyncio 2>/dev/null || pip3 install redis asyncio 2>/dev/null || true
 
 # Copiar ACP lib
-mkdir -p ~/.hermes/acp/
-cp -r /mnt/c/CindyAgent/REPLICAR_PACKAGE/scripts/acp_redis.py ~/.hermes/acp/ 2>/dev/null || true
-cp -r /mnt/c/CindyAgent/REPLICAR_PACKAGE/scripts/test_acp_multi_agent.py ~/.hermes/acp/ 2>/dev/null || true
+mkdir -p ~/.agents/scripts ~/.hermes/acp
+cp /mnt/c/CindyAgent/REPLICAR_PACKAGE/scripts/acp_redis.py ~/.agents/scripts/ 2>/dev/null || true
+cp /mnt/c/CindyAgent/REPLICAR_PACKAGE/scripts/test_acp_multi_agent.py ~/.agents/scripts/ 2>/dev/null || true
+cp /mnt/c/CindyAgent/REPLICAR_PACKAGE/scripts/acp_redis.py ~/.hermes/acp/ 2>/dev/null || true
+cp /mnt/c/CindyAgent/REPLICAR_PACKAGE/scripts/test_acp_multi_agent.py ~/.hermes/acp/ 2>/dev/null || true
 
 echo "ACP configurado. Keys Redis:"
 redis-cli KEYS "acp:*" 2>/dev/null || echo "Redis não disponível"

@@ -9,7 +9,7 @@
 ```
 REPLICAR_PACKAGE/
 ├── README.md                        # Este arquivo
-├── SCRIPTS/
+├── scripts/
 │   ├── 00_setup_wsl.sh              # Pré-requisitos do WSL2
 │   ├── 01_install_hermes.sh         # Instalação do Hermes Agent
 │   ├── 02_configure_env.sh          # Configuração de variáveis de ambiente
@@ -20,20 +20,20 @@ REPLICAR_PACKAGE/
 │   ├── 07_install_ollama.sh         # GLM-5.1 via Ollama (opcional)
 │   ├── 08_setup_acp.sh              # Configuração do ACP via Redis
 │   └── 99_activate.sh               # Ativação final
-├── CONFIGS/
+├── configs/
 │   ├── config.yaml.template         # Template do config.yaml do Hermes
 │   ├── .env.template                # Template do .env (sem segredos)
 │   ├── SOUL.md.template             # Persona canônica da Cindy
 │   ├── USER.md.template             # Preferências do operador
 │   ├── MEMORY.md.template           # Memória operacional da Cindy
 │   └── dual_model_gate.py          # Gate de roteamento para 5 agentes
-├── RUNTIME_EXPORT/                  # Exportação do runtime vivo
+├── runtime_export/                  # Exportação do runtime vivo
 │   ├── config.runtime.yaml          # Config.yaml exportado (sem segredos)
 │   ├── auth.export.json             # Auth providers (tokens censurados)
 │   ├── skills_list.txt             # Lista de skills instaladas
 │   ├── redis_dump.redis            # Dump do Redis (opcional)
 │   └── system_info.txt             # Info do sistema original
-└── DOCS/
+└── docs/
     ├── REPLICAR.md                  # Guia de replicação
     ├── CHECKLIST.md                 # Checklist de validação
     └── TROUBLESHOOT.md             # Problemas comuns
@@ -47,14 +47,14 @@ cp -r /mnt/c/CindyAgent/REPLICAR_PACKAGE ~/
 
 # 2. Executar em ordem
 cd ~/REPLICAR_PACKAGE
-bash SCRIPTS/00_setup_wsl.sh      # Pré-requisitos
-bash SCRIPTS/03_install_redis.sh   # Redis
-bash SCRIPTS/01_install_hermes.sh # Hermes
-bash SCRIPTS/02_configure_env.sh  # .env e config.yaml
-bash SCRIPTS/04_install_opencode.sh # OpenCode CLI
-bash SCRIPTS/06_sync_kb.sh        # KB canônica
-bash SCRIPTS/08_setup_acp.sh      # Scripts ACP
-bash SCRIPTS/99_activate.sh       # Validação final
+bash scripts/00_setup_wsl.sh        # Pré-requisitos
+bash scripts/03_install_redis.sh    # Redis
+bash scripts/01_install_hermes.sh   # Hermes
+bash scripts/02_configure_env.sh    # .env e config.yaml
+bash scripts/04_install_opencode.sh # OpenCode CLI
+bash scripts/06_sync_kb.sh          # KB canônica
+bash scripts/08_setup_acp.sh        # Scripts ACP
+bash scripts/99_activate.sh         # Validação final
 ```
 
 ## O que cada script faz

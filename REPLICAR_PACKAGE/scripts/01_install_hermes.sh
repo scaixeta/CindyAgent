@@ -3,12 +3,11 @@ set -e
 
 echo "=== Hermes Agent Installation Script ==="
 
-# 1. Criar ~/.hermes/ e subdirs
 echo "[1/5] Creating ~/.hermes/ directory structure..."
 mkdir -p ~/.hermes/{logs,sessions,cron,skills,memories}
+mkdir -p ~/.local/bin
 echo "    Done."
 
-# 2. Clonar ou pull do repositório
 echo "[2/5] Cloning/Updating hermes-agent repository..."
 if [ -d "$HOME/.hermes/hermes-agent/.git" ]; then
     echo "    Repository exists, pulling latest changes..."
@@ -20,19 +19,36 @@ else
 fi
 echo "    Done."
 
-# 3. Criar venv com python3.11
 echo "[3/5] Creating Python 3.11 virtual environment..."
 cd ~/.hermes/hermes-agent
-python3.11 -m venv venv
+PYTHON_BIN=""
+for candidate in python3.13 python3.12 python3.11 python3; do
+    if command -v "$candidate" >/dev/null 2>&1; then
+        if "$candidate" -c 'import sys; raise SystemExit(0 if sys.version_info >= (3, 11) else 1)'; then
+            PYTHON_BIN="$candidate"
+            break
+        fi
+    fi
+done
+
+if [ -z "$PYTHON_BIN" ]; then
+    echo "    ERROR: Python 3.11+ is required."
+    exit 1
+fi
+
+"$PYTHON_BIN" -m venv venv
 echo "    Done."
 
-# 4. Instalar dependências com uv sync --all-extras
 echo "[4/5] Installing dependencies with uv sync --all-extras..."
 source venv/bin/activate
+if ! command -v uv >/dev/null 2>&1; then
+    echo "    uv not found, installing..."
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    export PATH="$HOME/.local/bin:$PATH"
+fi
 uv sync --all-extras
 echo "    Done."
 
-# 5. Linkar hermes para PATH
 echo "[5/5] Linking hermes to PATH..."
 ln -sf ~/.hermes/hermes-agent/venv/bin/hermes ~/.local/bin/hermes 2>/dev/null || \
 ln -sf ~/.hermes/hermes-agent/venv/bin/hermes /usr/local/bin/hermes 2>/dev/null || \
