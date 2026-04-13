@@ -4,7 +4,7 @@
 
 | ID | Status | Inicio | Escopo |
 |---|---|---|---|
-| S2 | Ativa | 2026-04-13 | Operacionalização da equipe de 5 agentes no Sentivis SIM — ThingsBoard CE, n8n Railway, dashboards, alarms, validações e integrações |
+| S2 | Planejada | 2026-04-13 | Operacionalização da equipe de 5 agentes no Sentivis SIM — ThingsBoard CE, n8n Railway, dashboards, alarms, validações e integrações |
 
 ## Sprints Encerradas
 
@@ -30,6 +30,7 @@
 - `2026-04-13` — D-S1-13: Equipe de 5 agentes com ACP via Redis — modelo aprovado
 - `2026-04-13` — D-S1-14: Agentes se comunicam via ACP/JSON — nunca em linguagem humana entre si
 - `2026-04-13` — D-S1-15: PO approves planos; agentes escalam decisões grandes via Cindy
+- `2026-04-13` — ST-S2-03: Playwright instalado e funcional (Chromium, Firefox, WebKit) — venv Hermes como ambiente Python preferencial
 
 
 ## Estrutura de Tracking
