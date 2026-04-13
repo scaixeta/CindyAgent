@@ -21,7 +21,7 @@ O projeto opera sobre **Windows + WSL2 + Ubuntu-22.04 + Hermes**, com Telegram c
 
 - Windows com WSL2 funcional
 - distro Ubuntu-22.04 instalada
-- Hermes instalado dentro do WSL
+- Hermes instalado dentro do WSL a partir da fonte canônica do Projeto Hermes
 - credenciais do Telegram já configuradas no runtime Hermes
 - MINIMAX_API_KEY do Coding Plan em `.scr/.env` (nunca versionar)
 - OpenCode CLI acessível via `run_opencode.bat`
@@ -64,6 +64,21 @@ KB/hermes/
 ```
 
 Essa KB e a origem canonica para a persona da Cindy no Hermes. O runtime vivo em `/root/.hermes` deve permanecer coerente com esse conteudo.
+
+## Fonte do Hermes
+
+Fonte oficial e documentação:
+
+- `https://github.com/nousresearch/hermes-agent`
+- `https://hermes-agent.nousresearch.com/docs/`
+
+O instalador aceita uma destas origens, nesta ordem:
+
+1. `HERMES_AGENT_SOURCE_DIR` apontando para uma cópia local do Projeto Hermes
+2. `HERMES_AGENT_ARCHIVE` apontando para um `.tar.gz`, `.tgz`, `.tar` ou `.zip`
+3. `HERMES_AGENT_REPO_URL` apontando para o repositório Git correto do Projeto Hermes
+
+Isso evita dependência de uma URL fixa incorreta e permite instalar sem percalços quando a fonte local já existe.
 
 ## Inicializacao pratica
 

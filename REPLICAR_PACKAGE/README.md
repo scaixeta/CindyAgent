@@ -62,7 +62,7 @@ bash scripts/99_activate.sh         # Validação final
 | Script | O que instala/configura |
 |---|---|
 | `00_setup_wsl.sh` | Pacotes base: git, curl, build-essential, python3.11, python3-pip, redis-server |
-| `01_install_hermes.sh` | Clona hermes-agent repo, cria venv, instala dependências |
+| `01_install_hermes.sh` | Instala o Hermes a partir de uma fonte local configurada ou URL explícita, cria venv e instala dependências |
 | `02_configure_env.sh` | Copia templates, solicita API keys, valida configuração |
 | `03_install_redis.sh` | Instala e configura Redis 7.0+ |
 | `04_install_opencode.sh` | Instala OpenCode CLI, configura MINIMAX_API_KEY |
@@ -131,7 +131,7 @@ Este pacote foi gerado a partir do ambiente:
 - **Python:** `3.11.15` (venv: `/root/.hermes/hermes-agent/venv`)
 - **Node:** `v22.22.2`
 - **Redis:** `7.0.15`
-- **Hermes Agent:** `v0.8.0` (git tag `RELEASE_v0.8.0.md`)
+- **Hermes Agent:** fonte oficial `https://github.com/nousresearch/hermes-agent`
 - **Runtime path:** `/root/.hermes/`
 - **Config path:** `~/.hermes/config.yaml`
 - **Repo principal:** `https://github.com/scaixeta/cindy-oc`

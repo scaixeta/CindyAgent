@@ -8,7 +8,7 @@ Este documento descreve a operacao atual do Cindy Agent com Hermes em WSL, Teleg
 
 | Item | Estado |
 |---|---|
-| Runtime Hermes | instalado e funcional |
+| Runtime Hermes | instalado e funcional quando a fonte canônica do Projeto Hermes estiver provisionada |
 | Local do runtime | `/root/.hermes` |
 | Executavel | `/root/.hermes/hermes-agent/venv/bin/hermes` |
 | Telegram | configurado e pareado |
