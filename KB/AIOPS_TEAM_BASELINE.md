@@ -297,6 +297,102 @@ Na prática:
 - Azure DevOps Boards/Pipelines apenas se o custo operacional fizer sentido
 - Azure Monitor/Application Insights em fase posterior para observabilidade centralizada
 
+## Solução Microsoft-first recomendada
+
+### Objetivo da solução
+
+Adotar um stack prioritariamente alinhado ao ecossistema Microsoft, mas sem depender desde o início de licenças corporativas caras ou de produtos ainda desnecessários para o estágio atual do CindyAgent.
+
+### Princípios da solução
+
+- usar Microsoft como direção arquitetural principal
+- priorizar componentes open source, tiers gratuitos e integração incremental
+- preservar a documentação canônica e o `Dev_Tracking` como fonte de verdade
+- preservar o ACP via Redis como barramento interno do time
+- usar OpenCode como executor técnico dos especialistas
+- adiar produtos Microsoft pagos até existir maturidade operacional suficiente
+
+### Stack-alvo por camada
+
+#### 1. Coordination layer
+
+- Cindy como coordenadora
+- Microsoft Agent Framework como arquitetura-alvo de referência
+- Agent Governance Toolkit como modelo de guardrails de runtime
+
+#### 2. Mesh layer
+
+- ACP interno sobre Redis
+- capability registry por agente
+- task lifecycle, artifacts, trace e handoff
+- semântica inspirada em A2A para descoberta de capacidade e coordenação
+
+#### 3. Knowledge layer
+
+- `docs/` como documentação canônica
+- `Dev_Tracking*.md` como fonte de verdade da sprint
+- `KB/` como memória operacional e baseline arquitetural
+- memória privada por agente e memória compartilhada de time
+
+#### 4. Execution layer
+
+- OpenCode como runtime de execução dos especialistas
+- agentes especializados por papel
+- worktrees ou sandboxes por tarefa
+
+#### 5. Tool layer
+
+- MCP para ferramentas e contexto externo
+- integrações Microsoft quando agregarem valor real
+- integração não-Microsoft mantida quando já for funcional e mais econômica
+
+#### 6. Observability layer
+
+- tracing e métricas locais no curto prazo
+- evolução posterior para Azure Monitor / Application Insights
+
+### Decisão prática de adoção
+
+#### Entrar agora
+
+- Microsoft Agent Framework como referência arquitetural
+- Agent Governance Toolkit como referência de segurança e governança
+- Redis + ACP como barramento
+- OpenCode como executor
+- documentação e tracking locais como source of truth
+
+#### Entrar em fase posterior
+
+- Azure DevOps Boards
+- Azure Pipelines
+- Azure Monitor / Application Insights
+- Entra ID ou identidade centralizada para agentes, se a complexidade justificar
+
+#### Adiar
+
+- Azure SRE Agent como núcleo inicial
+- Copilot Enterprise como dependência principal do time
+- qualquer componente Microsoft com custo recorrente sem ganho comprovado
+
+### Interpretação do Microsoft-first neste projeto
+
+Neste contexto, `Microsoft first` não significa substituir imediatamente tudo por produto Microsoft.
+
+Significa:
+
+- desenhar a arquitetura para convergir ao ecossistema Microsoft
+- usar primeiro o que a Microsoft oferece de forma aberta, interoperável ou economicamente viável
+- manter interoperabilidade com ferramentas já adotadas enquanto o time amadurece
+
+### Resultado esperado
+
+Ao seguir essa solução:
+
+- o projeto respeita a diretriz Microsoft-first
+- não se bloqueia por licença antes da hora
+- mantém evolução incremental
+- preserva a autonomia dos agentes e a governança do PO
+
 ### Ferramentas a adiar
 
 - Azure SRE Agent como núcleo do sistema
@@ -366,6 +462,7 @@ O OpenCode deve ser integrado como motor de execução dos agentes especialistas
 - Tratar o time atual como `estado parcial`, não como `estado final`
 - Evitar afirmar que a equipe de 5 agentes já opera de forma plenamente autônoma
 - Projetar a evolução sobre um modelo de mesh governado
+- Adotar a solução `Microsoft first` de forma incremental, pragmática e compatível com restrições de licença
 - Preservar Cindy como coordenadora e o PO como gate humano
 - Materializar agentes como unidades reais com ferramentas, skills, memória e workflows próprios
 

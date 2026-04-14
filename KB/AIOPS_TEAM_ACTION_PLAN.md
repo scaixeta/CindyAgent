@@ -157,12 +157,57 @@ Ao final da implementação, o sistema deve permitir:
 
 - a evolução do stack respeita a diretriz Microsoft-first sem forçar dependência cara antes da hora
 
+## Solução Microsoft-first a implementar
+
+### Núcleo recomendado
+
+- Cindy como coordenadora do time
+- ACP via Redis como mesh governado
+- OpenCode como executor dos especialistas
+- Microsoft Agent Framework como arquitetura-alvo
+- Agent Governance Toolkit como referência de governança
+
+### Sequência de adoção
+
+#### Etapa 1 — agora
+
+- consolidar ACP interno
+- materializar especialistas
+- integrar OpenCode
+- usar Microsoft Agent Framework como guia estrutural
+
+#### Etapa 2 — após estabilização do time
+
+- avaliar Azure DevOps para apoio de board/pipeline
+- avaliar Azure Monitor/Application Insights para observabilidade centralizada
+
+#### Etapa 3 — após validação operacional
+
+- avaliar componentes Microsoft pagos que tragam ganho real
+- considerar serviços AIOps/SRE mais avançados apenas com ROI claro
+
+### Regra de decisão
+
+Sempre que houver duas opções técnicas equivalentes:
+
+- preferir a opção Microsoft, se:
+  - houver viabilidade econômica
+  - não houver perda importante de autonomia
+  - não houver dependência prematura de licença
+
+Caso contrário:
+
+- manter a solução atual interoperável
+- registrar o gap
+- adiar a migração para a fase correta
+
 ## Ferramentas obrigatórias
 
 - Hermes
 - Redis
 - ACP evoluído
 - OpenCode
+- Microsoft Agent Framework como referência de arquitetura
 - documentação canônica
 - `Dev_Tracking*.md`
 - KB compartilhada
@@ -175,6 +220,9 @@ Ao final da implementação, o sistema deve permitir:
 - capability registry visual
 - dashboard operacional do time
 - automation de gates e approvals
+- Agent Governance Toolkit
+- Azure Monitor / Application Insights
+- Azure DevOps Boards/Pipelines
 
 ## Ferramentas a adiar
 

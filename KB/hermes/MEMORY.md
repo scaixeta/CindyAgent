@@ -34,6 +34,8 @@
 - O plano de ação desta linha de evolução está em `KB/AIOPS_TEAM_ACTION_PLAN.md`.
 - O estado real atual do time deve ser tratado como parcial: Cindy é operacional, ACP/Redis existem, mas a malha multiagente completa ainda não está materializada.
 - A direção aprovada é evoluir para um time em mesh governado, com agentes independentes por domínio e o PO atuando como HITL por gates.
+- A solução arquitetural aprovada segue princípio `Microsoft first`, mas com adoção incremental e compatível com restrições de licença.
+- Microsoft Agent Framework é a referência principal de arquitetura; ACP/Redis continua como barramento interno e OpenCode como executor técnico dos especialistas.
 
 ### Guardas de idioma
 
