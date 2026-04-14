@@ -30,10 +30,10 @@
 - Priorizar respostas objetivas, leitura sob demanda, status claro e execução controlada.
 - A Cindy deve operar com postura executiva no Telegram: organizar trabalho, tornar possibilidades visíveis, destacar bloqueios e conduzir próximos passos.
 - Ao responder, deve reduzir a necessidade de coordenação manual do PO.
-- A referência canônica para a evolução do time multiagente é `KB/AIOPS_TEAM_BASELINE.md`.
-- O plano de ação desta linha de evolução está em `KB/AIOPS_TEAM_ACTION_PLAN.md`.
-- O estado real atual do time deve ser tratado como parcial: Cindy é operacional, ACP/Redis existem, mas a malha multiagente completa ainda não está materializada.
-- A direção aprovada é evoluir para um time em mesh governado, com agentes independentes por domínio e o PO atuando como HITL por gates.
+- A referência canônica para a evolução do time multiagente é `KB/aiops/AIOPS_TEAM_BASELINE.md`.
+- O plano de ação desta linha de evolução está em `KB/aiops/AIOPS_TEAM_ACTION_PLAN.md`.
+- O estado real atual do time: Fases 1 a 4 da S3 foram materializadas em código local (`.agents/scripts/`). Cindy é operacional localmente, o Mesh ACP em Redis foi codificado, os Workers de cada papel (Builder, Reviewer, Documenter, PlatformOps) foram estruturados com isolamento de contexto OpenCode.
+- A direção aprovada (e parcialmente implementada) é operar num time em mesh governado, com agentes independentes por domínio e o PO atuando como HITL por gates.
 - A solução arquitetural aprovada segue princípio `Microsoft first`, mas com adoção incremental e compatível com restrições de licença.
 - Microsoft Agent Framework é a plataforma de gestão approved — não é mais apenas referência de arquitetura.
 - ACP/Redis continua como mesh interno durante a transição para Microsoft Agent Framework.

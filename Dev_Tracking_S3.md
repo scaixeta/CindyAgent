@@ -19,14 +19,14 @@
 
 Este planejamento tem como fonte de verdade os seguintes documentos:
 
-- `KB/AIOPS_TEAM_BASELINE.md` — baseline arquitetural e estado atual do time
-- `KB/AIOPS_TEAM_ACTION_PLAN.md` — plano de ação em 6 fases para materialização do time AIOps
+- `KB/aiops/AIOPS_TEAM_BASELINE.md` — baseline arquitetural e estado atual do time
+- `KB/aiops/AIOPS_TEAM_ACTION_PLAN.md` — plano de ação em 6 fases para materialização do time AIOps
 
 ### Situação atual
 
 A sprint S2 tinha como foco consolidar ferramentas internas (TTS, MCP, Playwright, SonarCloud, Whisper STT). Porém, o objetivo do projeto evoluiu. O novo objetivo é materializar um time AIOps multiagente completo e autônomo, usando Microsoft Agent Framework como plataforma de gestão e orquestração.
 
-Conforme registrado no `KB/AIOPS_TEAM_BASELINE.md`:
+Conforme registrado no `KB/aiops/AIOPS_TEAM_BASELINE.md`:
 
 - O runtime atual opera como `PO -> Cindy -> Hermes + ferramentas + delegação + Redis`
 - Cindy é o agente operacional real, mas a equipe de 5 agentes ainda está parcialmente materializada
@@ -116,17 +116,17 @@ Governança e HITL:
 
 | ID | Estória | SP | Dependência | Status |
 |---|---|---|---|---|
-| ST-S3-01 | Definir agent_card da Cindy: missão de orquestração, domínio de coordenação, habilidades de triage e escala, ferramentas permitidas (Hermes, ACP, Redis), limites de autonomia, critérios de escalação ao PO | 3 | — | Pending |
-| ST-S3-02 | Definir agent_card do Builder: missão de execução técnica, domínio de código e automações, habilidades de refatoração e pipeline, ferramentas permitidas (OpenCode, git, terminal), limites de autonomia | 3 | — | Pending |
-| ST-S3-03 | Definir agent_card do Reviewer: missão de validação, domínio de QA e compliance, habilidades de revisão semântica e auditoria, ferramentas permitidas (Playwright, SonarCloud, grep), limites de autonomia | 3 | — | Pending |
-| ST-S3-04 | Definir agent_card do Documenter: missão de documentação técnica, domínio de contratos e material operacional, habilidades de escrita técnica, ferramentas permitidas (markdown, docs), limites de autonomia | 3 | — | Pending |
-| ST-S3-05 | Definir agent_card do PlatformOps: missão de infraestrutura, domínio de IoT/telemetria/runtime, habilidades de ops e integrações (n8n, ThingsBoard), ferramentas permitidas (docker, redis-cli, terminal), limites de autonomia | 3 | — | Pending |
+| ST-S3-01 | Definir agent_card da Cindy: missão de orquestração, domínio de coordenação, habilidades de triage e escala, ferramentas permitidas (Hermes, ACP, Redis), limites de autonomia, critérios de escalação ao PO | 3 | — | Done |
+| ST-S3-02 | Definir agent_card do Builder: missão de execução técnica, domínio de código e automações, habilidades de refatoração e pipeline, ferramentas permitidas (OpenCode, git, terminal), limites de autonomia | 3 | — | Done |
+| ST-S3-03 | Definir agent_card do Reviewer: missão de validação, domínio de QA e compliance, habilidades de revisão semântica e auditoria, ferramentas permitidas (Playwright, SonarCloud, grep), limites de autonomia | 3 | — | Done |
+| ST-S3-04 | Definir agent_card do Documenter: missão de documentação técnica, domínio de contratos e material operacional, habilidades de escrita técnica, ferramentas permitidas (markdown, docs), limites de autonomia | 3 | — | Done |
+| ST-S3-05 | Definir agent_card do PlatformOps: missão de infraestrutura, domínio de IoT/telemetria/runtime, habilidades de ops e integrações (n8n, ThingsBoard), ferramentas permitidas (docker, redis-cli, terminal), limites de autonomia | 3 | — | Done |
 | ST-S3-06 | Microsoft Agent Framework: instalar ambiente de avaliação, configurar projeto-teste, documentar API de agent management, avaliar Agent Governance Toolkit como referência de guardrails | 8 | — | Pending |
-| ST-S3-07 | ACP Capability Registry: implementar registro de capacidades por agente (nome, domínio, ferramentas, skills, workflows, limites), permitir roteamento por capacidade no mesh | 5 | ST-S3-01 a ST-S3-05 | Pending |
-| ST-S3-08 | ACP Task Lifecycle: formalizar estados de tarefa (`queued`, `claimed`, `running`, `blocked`, `review`, `done`, `failed`, `escalated`), implementar transições e políticas de lock/lease | 5 | ST-S3-07 | Pending |
-| ST-S3-09 | ACP Handoffs: implementar protocolo formal de passagem de tarefa entre agentes, com trace_id, artifact_ref, deadline e semântica de resposta esperada | 5 | ST-S3-08 | Pending |
-| ST-S3-10 | OpenCode Integration: criar perfis especializados (planner, coder, reviewer, tester, docs-writer, sre-debugger, context-scout), definir permissões e MCPs por perfil, integrar chamada ao ACP mesh | 8 | ST-S3-01 a ST-S3-05 | Pending |
-| ST-S3-11 | OpenCode Executor Flow: implementar fluxo Cindy -> worker do agente -> OpenCode -> resultado com artefatos -> ACP, isolar tarefas complexas em worktree/sandbox | 5 | ST-S3-10 | Pending |
+| ST-S3-07 | ACP Capability Registry: implementar registro de capacidades por agente (nome, domínio, ferramentas, skills, workflows, limites), permitir roteamento por capacidade no mesh | 5 | ST-S3-01 a ST-S3-05 | Done |
+| ST-S3-08 | ACP Task Lifecycle: formalizar estados de tarefa (`queued`, `claimed`, `running`, `blocked`, `review`, `done`, `failed`, `escalated`), implementar transições e políticas de lock/lease | 5 | ST-S3-07 | Done |
+| ST-S3-09 | ACP Handoffs: implementar protocolo formal de passagem de tarefa entre agentes, com trace_id, artifact_ref, deadline e semântica de resposta esperada | 5 | ST-S3-08 | Done |
+| ST-S3-10 | OpenCode Integration: criar perfis especializados (planner, coder, reviewer, tester, docs-writer, sre-debugger, context-scout), definir permissões e MCPs por perfil, integrar chamada ao ACP mesh | 8 | ST-S3-01 a ST-S3-05 | Done |
+| ST-S3-11 | OpenCode Executor Flow: implementar fluxo Cindy -> worker do agente -> OpenCode -> resultado com artefatos -> ACP, isolar tarefas complexas em worktree/sandbox | 5 | ST-S3-10 | Done |
 | ST-S3-12 | Playwright Validation Suite: criar testes automatizados para validação básica de comportamento multiagente (smoke tests de handoff, smoke tests de task lifecycle) | 5 | Playwright instalado (ST-S2-03) | Pending |
 | ST-S3-13 | SonarCloud Configuration: configurar SonarScanner apontando para `scaixeta/CindyAgent`, integrar ao pipeline de validação (depende de credenciais — ST-S2-04 bloqueado) | 3 | Credenciais SonarCloud (ST-S2-04) | Pending |
 | ST-S3-14 | PO Gate Definition: documentar gates formais do PO (criação/ajuste sprint, aprovação plano, decisões de escopo/arquitetura/custo/risco, aceite final), definir política de quando PO entra e quando não entra | 3 | — | Pending |
@@ -153,9 +153,11 @@ Governança e HITL:
 | D-S3-11 | Codex é o modelo de pensamento e validação do time — usado para raciocínio profundo, planejamento e verificação de fatos contra o SoT | 2026-04-14 |
 | D-S3-12 | Drift de reboot identificado no Hermes: o runtime subiu com configuração antiga de Codex como primário e causou HTTP 400; estado tratado como transitório e superado pela D-S3-13 | 2026-04-14 |
 | D-S3-13 | Hermes Linux alinhado ao canônico: `MiniMax-M2.7` como primário via `minimax`, `gpt-5.3-codex` como fallback via `openai-codex`, `hermes-gateway.service` reiniciado com healthcheck e `hermes chat -Q` validados | 2026-04-14 |
-| D-S3-14 | Passagem de bastão analítica registrada em `KB/HANDOFF_S3_2026-04-14.md` para consolidar o que foi feito, o estado atual e o horizonte plausível da S3 | 2026-04-14 |
+| D-S3-14 | Passagem de bastão analítica registrada em `KB/aiops/HANDOFF_S3_2026-04-14.md` para consolidar o que foi feito, o estado atual e o horizonte plausível da S3 | 2026-04-14 |
 | D-S3-15 | Hermes atualizado de `v0.8.0` para `v0.9.0 (2026.4.13)` com proteção prévia da alteração local em `cron/scheduler.py` por stash e patch de backup; serviço e chamadas locais permaneceram válidos após o update | 2026-04-14 |
 | D-S3-16 | Bytecode envenenado (`.pyc` do Hermes v0.8.0) bloqueava sessões Telegram mesmo após correção do `config.yaml`; a limpeza de `__pycache__` e `.pyc` foi necessária para resolver `ImportError: cannot import name '_write_codex_cli_tokens'` no contexto de sessão | 2026-04-14 |
+| D-S3-17 | Materialização do AIOps Mesh e OpenCode Profiles estabelecida e refletida na base de código (.agents/scripts/). A infraestrutura core de agentes não requer produtos MS na fase atual. | 2026-04-14 |
+| D-S3-18 | A base de conhecimentos da CindyAgent foi reorganizada para não conter lixo operacional e separar referências de aplicações da documentação de governança. | 2026-04-14 |
 
 ---
 
@@ -174,18 +176,18 @@ Governança e HITL:
 
 | Event | Start | Finish | Status |
 |---|---|---|---|
-| Kickoff S3 | — | — | Pending |
-| ST-S3-01 (Agent Card Cindy) | — | — | Pending |
-| ST-S3-02 (Agent Card Builder) | — | — | Pending |
-| ST-S3-03 (Agent Card Reviewer) | — | — | Pending |
-| ST-S3-04 (Agent Card Documenter) | — | — | Pending |
-| ST-S3-05 (Agent Card PlatformOps) | — | — | Pending |
+| Kickoff S3 | 2026-04-14T20:00:00-ST | — | Done |
+| ST-S3-01 (Agent Card Cindy) | 2026-04-14T23:20:00-ST | 2026-04-14T23:26:00-FN | Done |
+| ST-S3-02 (Agent Card Builder) | 2026-04-14T23:20:00-ST | 2026-04-14T23:26:30-FN | Done |
+| ST-S3-03 (Agent Card Reviewer) | 2026-04-14T23:20:00-ST | 2026-04-14T23:27:00-FN | Done |
+| ST-S3-04 (Agent Card Documenter) | 2026-04-14T23:20:00-ST | 2026-04-14T23:27:40-FN | Done |
+| ST-S3-05 (Agent Card PlatformOps) | 2026-04-14T23:20:00-ST | 2026-04-14T23:28:20-FN | Done |
 | ST-S3-06 (MS Agent Framework) | — | — | Pending |
-| ST-S3-07 (Capability Registry) | — | — | Pending |
-| ST-S3-08 (Task Lifecycle) | — | — | Pending |
-| ST-S3-09 (ACP Handoffs) | — | — | Pending |
-| ST-S3-10 (OpenCode Integration) | — | — | Pending |
-| ST-S3-11 (OpenCode Executor Flow) | — | — | Pending |
+| ST-S3-07 (Capability Registry) | 2026-04-14T23:20:00-ST | 2026-04-14T23:24:10-FN | Done |
+| ST-S3-08 (Task Lifecycle) | 2026-04-14T23:20:00-ST | 2026-04-14T23:23:20-FN | Done |
+| ST-S3-09 (ACP Handoffs) | 2026-04-14T23:24:00-ST | 2026-04-14T23:25:00-FN | Done |
+| ST-S3-10 (OpenCode Integration) | 2026-04-14T23:28:00-ST | 2026-04-14T23:29:20-FN | Done |
+| ST-S3-11 (OpenCode Executor Flow) | 2026-04-14T23:28:00-ST | 2026-04-14T23:29:00-FN | Done |
 | ST-S3-12 (Playwright Suite) | — | — | Pending |
 | ST-S3-13 (SonarCloud Config) | — | — | Pending |
 | ST-S3-14 (PO Gate Definition) | — | — | Pending |
@@ -214,8 +216,8 @@ Governança e HITL:
 
 ### Fontes de verdade
 
-- Baseline: `KB/AIOPS_TEAM_BASELINE.md`
-- Plano de ação: `KB/AIOPS_TEAM_ACTION_PLAN.md`
+- Baseline: `KB/aiops/AIOPS_TEAM_BASELINE.md`
+- Plano de ação: `KB/aiops/AIOPS_TEAM_ACTION_PLAN.md`
 - Sprint anterior: `Dev_Tracking_S2.md` (substituída)
 - Sprint atual: `Dev_Tracking_S3.md` (esta)
 

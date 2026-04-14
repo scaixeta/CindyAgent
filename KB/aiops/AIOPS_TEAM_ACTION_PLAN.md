@@ -1,4 +1,4 @@
-# AIOPS_TEAM_ACTION_PLAN.md
+﻿# AIOPS_TEAM_ACTION_PLAN.md
 
 ## Objetivo
 
@@ -61,7 +61,7 @@ Ao final da implementação, o sistema deve permitir:
 - capability registry
 - lifecycle formal de tarefas
 - heartbeat e presença
-- tracing base por tarefa
+- **logging mínimo de tarefa obrigatório** — rastreabilidade antes dos workers entrarem em execução
 
 ### Ações
 
@@ -70,10 +70,13 @@ Ao final da implementação, o sistema deve permitir:
 3. Adicionar lock/lease por tarefa
 4. Adicionar filas de retry e dead-letter
 5. Definir formato de artifact e resposta
+6. **Implementar logging mínimo de tarefa:** registrar em cada transição de estado — quem enviou, quem recebeu, `trace_id`, timestamp, resultado ou motivo de falha
+7. **Validar rastreabilidade antes de avançar para Fase 3** — nenhum worker deve entrar em execução sem que o trace de tarefa já funcione
 
 ### Critério de pronto
 
-- o mesh deixa de ser prova de conceito e vira plano de execução confiável
+- o mesh deixa de ser prova de conceito e vira protocolo operacional confiável
+- qualquer tarefa enviada ao ACP gera um trace legível com origem, destino, estado e resultado
 
 ## Fase 3 — Materializar os especialistas
 
@@ -254,13 +257,13 @@ O PO não entra em:
 
 ## Ordem recomendada de implementação
 
-1. contrato operacional
-2. ACP ampliado
+1. contrato operacional (agent_cards)
+2. ACP ampliado **+ logging mínimo de tarefa** — rastreabilidade é pré-requisito para os workers
 3. workers dos especialistas
 4. integração OpenCode
-5. observabilidade
+5. observabilidade completa (dashboards, métricas, auditoria)
 6. adoção Microsoft-first incremental
 
 ## Observação final
 
-Este documento é o plano de ação derivado do baseline canônico em `KB/AIOPS_TEAM_BASELINE.md`. Ele não substitui a documentação DOC2.5 nem altera a sprint ativa.
+Este documento é o plano de ação derivado do baseline canônico em `KB/aiops/AIOPS_TEAM_BASELINE.md`. Ele não substitui a documentação DOC2.5 nem altera a sprint ativa.

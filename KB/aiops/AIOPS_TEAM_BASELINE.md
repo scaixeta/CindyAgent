@@ -1,4 +1,4 @@
-# AIOPS_TEAM_BASELINE.md
+﻿# AIOPS_TEAM_BASELINE.md
 
 ## Objetivo
 
@@ -12,11 +12,14 @@ Ele deve servir como referência de arquitetura operacional e de priorização p
 
 - Workspace Windows: `C:\CindyAgent`
 - Workspace WSL: `/mnt/c/CindyAgent`
-- Runtime vivo Hermes: `/root/.hermes`
-- Serviço ativo do gateway: `hermes-gateway.service`
+- Runtime vivo Hermes: `/root/.hermes` — versão `v0.9.0 (2026.4.13)`
+- Serviço ativo do gateway: `hermes-gateway.service` (systemd, enabled, `Restart=always`)
+- Modo de inicialização: **WSL2 + systemd** — não mais via `.bat` Windows
+- Fix permanente de bytecode: `ExecStartPre` no unit file limpa `.pyc` e `__pycache__` em todo start
 - Serviço ativo de backbone: `redis-server.service`
 - Canal operacional principal: Telegram
 - API server Hermes: porta `127.0.0.1:8642`
+- Healthcheck: `curl http://127.0.0.1:8642/health` → `{"status": "ok", "platform": "hermes-agent"}`
 
 ### Ferramentas disponíveis hoje
 
@@ -502,3 +505,4 @@ O OpenCode deve ser integrado como motor de execução dos agentes especialistas
 - Uso: orientar planejamento e implementação do time AIOps da Cindy
 - Política: atualizar sempre que o estado real do runtime ou da governança mudar
 - Observação: este documento não é o plano de ação final; ele é a base confirmada que deve sustentar o plano consolidado ao fim da análise
+- Última atualização: `2026-04-14` — runtime Hermes v0.9.0 estável, fix permanente de bytecode aplicado, gateway via systemd, Fase 1 do ACTION_PLAN como próximo passo aguardando OK do PO

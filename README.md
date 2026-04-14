@@ -1,4 +1,4 @@
-# Cindy Agent
+﻿# Cindy Agent
 
 Repositorio-base local da Cindy no workspace `C:\CindyAgent`, usado para manter a governanca DOC2.5, a documentacao canonica, a persona operacional da Cindy no Hermes e os artefatos de referencia que serao replicados para outros projetos do ecossistema.
 

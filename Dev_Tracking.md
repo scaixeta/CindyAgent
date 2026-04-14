@@ -1,4 +1,4 @@
-# Dev_Tracking.md — Índice de Sprints
+﻿# Dev_Tracking.md — Índice de Sprints
 
 ## Sprint Ativa
 
@@ -37,7 +37,7 @@
 - `2026-04-14` — Runtime Linux do Hermes corrigido após reboot: `MiniMax-M2.7` mantido como primário e `gpt-5.3-codex` como fallback
 - `2026-04-14` — `hermes-gateway.service` reiniciado com sucesso; healthcheck `/health` e `hermes chat -Q` validados no Linux
 - `2026-04-14` — Remote oficial reconciliado como `https://github.com/scaixeta/CindyAgent`
-- `2026-04-14` — Passagem de bastão registrada em `KB/HANDOFF_S3_2026-04-14.md`
+- `2026-04-14` — Passagem de bastão registrada em `KB/aiops/HANDOFF_S3_2026-04-14.md`
 - `2026-04-14` — Hermes atualizado de `v0.8.0` para `v0.9.0`; alteração local em `cron/scheduler.py` preservada com stash e patch de backup antes do update
 
 

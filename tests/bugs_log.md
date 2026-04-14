@@ -2,6 +2,28 @@
 
 ## Sprint S3
 
+### BUG-S3-04 — Bytecode envenenado (.pyc) recorrente após reboot — BUG-S3-03 reincidente
+
+- **Data:** 2026-04-14
+- **Severidade:** Alta
+- **Evidência:** Após cada reboot do WSL2, o `hermes-gateway.service` subia com `Tasks: 1` e o journal mostrava `ImportError: cannot import name '_write_codex_cli_tokens' from 'hermes_cli.auth'` em todas as sessões Telegram. O Telegram recebia a mensagem mas o agente falhava ao processar — sem resposta ao usuário.
+- **Causa raiz:** O Python regenera automaticamente arquivos `.pyc` no primeiro import após boot. Os arquivos `.pyc` do Hermes v0.8.0 eram recriados a cada início de serviço, pois a limpeza manual feita em BUG-S3-03 não persistia entre reboots.
+- **Correção permanente:** Adicionado `ExecStartPre` de limpeza de `.pyc` e `__pycache__` diretamente no unit file `/etc/systemd/system/hermes-gateway.service`:
+  ```
+  ExecStartPre=/bin/bash -lc 'find /root/.hermes/hermes-agent -name *.pyc -delete; find /root/.hermes/hermes-agent -name __pycache__ -type d -exec rm -rf {} + 2>/dev/null; true'
+  ```
+- **Backup do unit file original:** `/etc/systemd/system/hermes-gateway.service.bak`
+- **Validação:** Após `systemctl daemon-reload && systemctl start hermes-gateway.service`: `Tasks: 5`, healthcheck `{"status":"ok"}`, sem `ImportError` no journal. O `ExecStartPre` de limpeza aparece como `status=0/SUCCESS` no `systemctl status`.
+- **Status:** Corrigido permanentemente
+
+### TEST-S3-05 — Fix permanente de bytecode validado
+
+- **Data:** 2026-04-14
+- **Escopo:** Confirmar que o `ExecStartPre` de limpeza de `.pyc` no unit file do systemd elimina o `ImportError` de forma permanente, sem necessidade de intervenção manual após reboots.
+- **Resultado:** `systemctl daemon-reload && systemctl start hermes-gateway.service` → Process 553 executou `find ... -delete` com `status=0/SUCCESS`; `Tasks: 5`; healthcheck `{"status":"ok","platform":"hermes-agent"}`; journal sem `ImportError`. Fix sobrevive a restarts automáticos (`Restart=always`).
+- **Evidência:** `systemctl status hermes-gateway.service` mostra o novo `ExecStartPre` executado com sucesso em cada ciclo de start.
+- **Status:** Passou
+
 ### BUG-S3-01 — Fallback MiniMax não ativava no contexto cron do Hermes
 
 - **Data:** 2026-04-14
