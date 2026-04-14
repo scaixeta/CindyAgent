@@ -127,10 +127,10 @@ Governança e HITL:
 | ST-S3-09 | ACP Handoffs: implementar protocolo formal de passagem de tarefa entre agentes, com trace_id, artifact_ref, deadline e semântica de resposta esperada | 5 | ST-S3-08 | Done |
 | ST-S3-10 | OpenCode Integration: criar perfis especializados (planner, coder, reviewer, tester, docs-writer, sre-debugger, context-scout), definir permissões e MCPs por perfil, integrar chamada ao ACP mesh | 8 | ST-S3-01 a ST-S3-05 | Done |
 | ST-S3-11 | OpenCode Executor Flow: implementar fluxo Cindy -> worker do agente -> OpenCode -> resultado com artefatos -> ACP, isolar tarefas complexas em worktree/sandbox | 5 | ST-S3-10 | Done |
-| ST-S3-12 | Playwright Validation Suite: criar testes automatizados para validação básica de comportamento multiagente (smoke tests de handoff, smoke tests de task lifecycle) | 5 | Playwright instalado (ST-S2-03) | Pending |
+| ST-S3-12 | Playwright Validation Suite: criar testes automatizados para validação básica de comportamento multiagente (smoke tests de handoff, smoke tests de task lifecycle) | 5 | Playwright instalado (ST-S2-03) | Done |
 | ST-S3-13 | SonarCloud Configuration: configurar SonarScanner apontando para `scaixeta/CindyAgent`, integrar ao pipeline de validação (depende de credenciais — ST-S2-04 bloqueado) | 3 | Credenciais SonarCloud (ST-S2-04) | Pending |
-| ST-S3-14 | PO Gate Definition: documentar gates formais do PO (criação/ajuste sprint, aprovação plano, decisões de escopo/arquitetura/custo/risco, aceite final), definir política de quando PO entra e quando não entra | 3 | — | Pending |
-| ST-S3-15 | Observabilidade Multiagente: implementar tracing por tarefa, log de handoffs, métricas de throughput/falhas/retrabalho, dashboard de saúde da sprint | 8 | ST-S3-08, ST-S3-09 | Pending |
+| ST-S3-14 | PO Gate Definition: documentar gates formais do PO (criação/ajuste sprint, aprovação plano, decisões de escopo/arquitetura/custo/risco, aceite final), definir política de quando PO entra e quando não entra | 3 | — | Done |
+| ST-S3-15 | Observabilidade Multiagente: implementar tracing por tarefa, log de handoffs, métricas de throughput/falhas/retrabalho, dashboard de saúde da sprint | 8 | ST-S3-08, ST-S3-09 | Done |
 
 **Total de SP planejado:** 70
 
@@ -188,10 +188,10 @@ Governança e HITL:
 | ST-S3-09 (ACP Handoffs) | 2026-04-14T23:24:00-ST | 2026-04-14T23:25:00-FN | Done |
 | ST-S3-10 (OpenCode Integration) | 2026-04-14T23:28:00-ST | 2026-04-14T23:29:20-FN | Done |
 | ST-S3-11 (OpenCode Executor Flow) | 2026-04-14T23:28:00-ST | 2026-04-14T23:29:00-FN | Done |
-| ST-S3-12 (Playwright Suite) | — | — | Pending |
+| ST-S3-12 (Playwright Suite) | 2026-04-14T23:37:00-ST | 2026-04-14T23:43:40-FN | Done |
 | ST-S3-13 (SonarCloud Config) | — | — | Pending |
-| ST-S3-14 (PO Gate Definition) | — | — | Pending |
-| ST-S3-15 (Observabilidade) | — | — | Pending |
+| ST-S3-14 (PO Gate Definition) | 2026-04-14T23:37:00-ST | 2026-04-14T23:37:30-FN | Done |
+| ST-S3-15 (Observabilidade) | 2026-04-14T23:37:30-ST | 2026-04-14T23:37:50-FN | Done |
 | Hermes update v0.9.0 | 2026-04-14T21:18:22-ST | 2026-04-14T21:21:51-FN | Done |
 | Sprint close | — | — | Pending |
 
